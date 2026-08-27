@@ -56,5 +56,10 @@ The fast route is sufficient to inspect how the reported tables and figures aris
 
 ## Data and code availability
 
-All expression data are public through NCBI GEO. Raw data are not redistributed here. A permanent repository URL/DOI and the selected license will be added at the public-release gate.
+All expression data are public through NCBI GEO. Raw data are not redistributed here. The verified public repository URL and any archival DOI will be added at the public-release gate.
 
+## License
+
+Source code in this repository is released under the [MIT License](LICENSE).
+Public GEO data and derived manuscript figures and tables are included for
+reproducibility and remain subject to applicable source and journal terms.
