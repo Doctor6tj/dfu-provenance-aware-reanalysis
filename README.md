@@ -56,7 +56,10 @@ The fast route is sufficient to inspect how the reported tables and figures aris
 
 ## Data and code availability
 
-All expression data are public through NCBI GEO. Raw data are not redistributed here. The verified public repository URL and any archival DOI will be added at the public-release gate.
+All expression data are public through NCBI GEO. Raw data are not redistributed
+here. Code and accepted source objects are publicly available at
+[GitHub](https://github.com/Doctor6tj/dfu-provenance-aware-reanalysis) under the
+MIT License.
 
 ## License
 
