@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M01_PROVENANCE_AUDIT",
+  "decision_id": "M01_GSE68183_GSE80178_RELATIONSHIP_v1",
+  "verdict": "PASS",
+  "relationship": "GSE80178 contains six new DFU samples and reuses the six earlier GSE68183/GSE68186 foot-skin control sample objects.",
+  "dataset_roles": {
+    "GSE80178": "PRIMARY_DFU_VERSUS_FOOT_SKIN_CONTRAST_CONTAINER; 6 DFU plus 6 reused controls",
+    "GSE68183": "COMPARATOR_CONTEXT_AND_CONTROL_SOURCE; 3 DFS versus 3 NFS; not an independent DFU validation cohort"
+  },
+  "allowed_uses": [
+    "Use each exact shared raw sample object once in any deduplicated analysis.",
+    "Retain DFS and NFS as explicit comparator strata.",
+    "Evaluate the source-published pooled foot-skin comparator only as a declared compatible-contrast or sensitivity specification."
+  ],
+  "forbidden_uses": [
+    "Treat GSE68183 as an independent validation cohort for GSE80178.",
+    "Relabel non-ulcerated GSE68183 foot skin as DFU tissue.",
+    "Count accession aliases as separate participants or samples."
+  ],
+  "evidence_ids": [
+    "EVID001",
+    "EVID002",
+    "EVID003",
+    "EVID004",
+    "EVID005",
+    "EVID006"
+  ],
+  "participant_boundary": "Public sources do not expose real participant identifiers for the six control samples; exact accession pairs share one conservative analytic independence unit."
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M07_SINGLE_CELL_CONTEXT",
+  "environment_role": "FULL_CORE_PARTICIPANT_LEVEL",
+  "captured_at": "2026-08-25 17:44:15 UTC",
+  "status": "PASS_REQUIRED_R_PACKAGES",
+  "rscript_executable": "Rscript",
+  "r_version": "R version 4.5.3 (2026-03-11 ucrt)",
+  "platform": "x86_64-w64-mingw32",
+  "library_paths": ["<R_USER_LIBRARY>", "<R_SYSTEM_LIBRARY>"],
+  "packages": [
+    {
+      "package": "Matrix",
+      "role": "sparse_matrix",
+      "required": true,
+      "installed": true,
+      "version": "1.7.5"
+    },
+    {
+      "package": "SingleCellExperiment",
+      "role": "single_cell_container",
+      "required": true,
+      "installed": true,
+      "version": "1.32.0"
+    },
+    {
+      "package": "scuttle",
+      "role": "cell_qc",
+      "required": true,
+      "installed": true,
+      "version": "1.20.0"
+    },
+    {
+      "package": "scDblFinder",
+      "role": "doublet_detection",
+      "required": true,
+      "installed": true,
+      "version": "1.24.10"
+    },
+    {
+      "package": "Seurat",
+      "role": "outcome_blinded_clustering_and_visualization",
+      "required": true,
+      "installed": true,
+      "version": "5.4.0"
+    },
+    {
+      "package": "SeuratObject",
+      "role": "object_and_layers",
+      "required": true,
+      "installed": true,
+      "version": "5.4.0"
+    },
+    {
+      "package": "SummarizedExperiment",
+      "role": "column_metadata",
+      "required": true,
+      "installed": true,
+      "version": "1.40.0"
+    },
+    {
+      "package": "BiocParallel",
+      "role": "serial_execution",
+      "required": true,
+      "installed": true,
+      "version": "1.44.0"
+    },
+    {
+      "package": "ggplot2",
+      "role": "figures",
+      "required": true,
+      "installed": true,
+      "version": "4.0.2"
+    },
+    {
+      "package": "jsonlite",
+      "role": "parameters_and_qc_json",
+      "required": true,
+      "installed": true,
+      "version": "2.0.0"
+    },
+    {
+      "package": "RANN",
+      "role": "nearest_neighbors",
+      "required": true,
+      "installed": true,
+      "version": "2.6.2"
+    },
+    {
+      "package": "uwot",
+      "role": "umap",
+      "required": true,
+      "installed": true,
+      "version": "0.2.4"
+    },
+    {
+      "package": "xgboost",
+      "role": "doublet_classifier",
+      "required": true,
+      "installed": true,
+      "version": "3.2.1.1"
+    },
+    {
+      "package": "edgeR",
+      "role": "participant_pseudobulk_ql_inference",
+      "required": true,
+      "installed": true,
+      "version": "4.8.2"
+    },
+    {
+      "package": "limma",
+      "role": "edgeR_support",
+      "required": true,
+      "installed": true,
+      "version": "3.66.0"
+    },
+    {
+      "package": "statmod",
+      "role": "robust_quasi_likelihood_support",
+      "required": true,
+      "installed": true,
+      "version": "1.5.1"
+    }
+  ],
+  "required_missing": [],
+  "session_info": ["R version 4.5.3 (2026-03-11 ucrt)", "Platform: x86_64-w64-mingw32/x64", "Running under: Windows 10 x64 (build 19045)", "", "Matrix products: default", "  LAPACK version 3.12.1", "", "locale:", "[1] C", "system code page: 65001", "", "time zone: Asia/Shanghai", "tzcode source: internal", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "loaded via a namespace (and not attached):", "  [1] RcppAnnoy_0.0.23            splines_4.5.3              ", "  [3] later_1.4.8                 BiocIO_1.20.0              ", "  [5] bitops_1.0-9                tibble_3.3.1               ", "  [7] polyclip_1.10-7             XML_3.99-0.23              ", "  [9] fastDummies_1.7.5           lifecycle_1.0.5            ", " [11] scDblFinder_1.24.10         edgeR_4.8.2                ", " [13] globals_0.19.1              lattice_0.22-9             ", " [15] MASS_7.3-65                 magrittr_2.0.4             ", " [17] limma_3.66.0                plotly_4.12.0              ", " [19] yaml_2.3.12                 metapod_1.18.0             ", " [21] httpuv_1.6.17               otel_0.2.0                 ", " [23] Seurat_5.4.0                sctransform_0.4.3          ", " [25] spam_2.11-3                 sp_2.2-1                   ", " [27] spatstat.sparse_3.1-0       reticulate_1.46.0          ", " [29] cowplot_1.2.0               pbapply_1.7-4              ", " [31] RColorBrewer_1.1-3          abind_1.4-8                ", " [33] Rtsne_0.17                  GenomicRanges_1.62.1       ", " [35] purrr_1.2.2                 BiocGenerics_0.56.0        ", " [37] RCurl_1.98-1.18             IRanges_2.44.0             ", " [39] S4Vectors_0.48.1            ggrepel_0.9.8              ", " [41] irlba_2.3.7                 listenv_0.10.1             ", " [43] spatstat.utils_3.2-2        goftest_1.2-3              ", " [45] RSpectra_0.16-2             spatstat.random_3.4-5      ", " [47] dqrng_0.4.1                 fitdistrplus_1.2-6         ", " [49] parallelly_1.47.0           codetools_0.2-20           ", " [51] DelayedArray_0.36.1         scuttle_1.20.0             ", " [53] tidyselect_1.2.1            UCSC.utils_1.6.1           ", " [55] farver_2.1.2                ScaledMatrix_1.18.0        ", " [57] viridis_0.6.5               matrixStats_1.5.0          ", " [59] stats4_4.5.3                spatstat.explore_3.8-0     ", " [61] Seqinfo_1.0.0               GenomicAlignments_1.46.0   ", " [63] jsonlite_2.0.0              BiocNeighbors_2.4.0        ", " [65] progressr_0.19.0            ggridges_0.5.7             ", " [67] survival_3.8-6              scater_1.38.1              ", " [69] tools_4.5.3                 ica_1.0-3                  ", " [71] Rcpp_1.1.1                  glue_1.8.0                 ", " [73] gridExtra_2.3               SparseArray_1.10.10        ", " [75] MatrixGenerics_1.22.0       GenomeInfoDb_1.46.2        ", " [77] dplyr_1.2.0                 fastmap_1.2.0              ", " [79] bluster_1.20.0              digest_0.6.39              ", " [81] rsvd_1.0.5                  R6_2.6.1                   ", " [83] mime_0.13                   scattermore_1.2            ", " [85] tensor_1.5.1                spatstat.data_3.1-9        ", " [87] cigarillo_1.0.0             tidyr_1.3.2                ", " [89] generics_0.1.4              data.table_1.18.2.1        ", " [91] rtracklayer_1.70.1          httr_1.4.8                 ", " [93] htmlwidgets_1.6.4           S4Arrays_1.10.1            ", " [95] uwot_0.2.4                  pkgconfig_2.0.3            ", " [97] gtable_0.3.6                lmtest_0.9-40              ", " [99] S7_0.2.1                    SingleCellExperiment_1.32.0", "[101] XVector_0.50.0              htmltools_0.5.9            ", "[103] dotCall64_1.2               SeuratObject_5.4.0         ", "[105] scales_1.4.0                Biobase_2.70.0             ", "[107] png_0.1-9                   spatstat.univar_3.1-7      ", "[109] scran_1.38.1                reshape2_1.4.5             ", "[111] rjson_0.2.23                nlme_3.1-169               ", "[113] curl_7.0.0                  zoo_1.8-15                 ", "[115] stringr_1.6.0               KernSmooth_2.23-26         ", "[117] parallel_4.5.3              miniUI_0.1.2               ", "[119] vipor_0.4.7                 restfulr_0.0.17            ", "[121] pillar_1.11.1               grid_4.5.3                 ", "[123] vctrs_0.7.2                 RANN_2.6.2                 ", "[125] promises_1.5.0              BiocSingular_1.26.1        ", "[127] beachmat_2.26.0             xtable_1.8-8               ", "[129] cluster_2.1.8.2             beeswarm_0.4.0             ", "[131] cli_3.6.5                   locfit_1.5-9.12            ", "[133] compiler_4.5.3              Rsamtools_2.26.0           ", "[135] rlang_1.1.7                 crayon_1.5.3               ", "[137] future.apply_1.20.2         plyr_1.8.9                 ", "[139] ggbeeswarm_0.7.3            stringi_1.8.7              ", "[141] deldir_2.0-4                viridisLite_0.4.3          ", "[143] BiocParallel_1.44.0         Biostrings_2.78.0          ", "[145] lazyeval_0.2.3              spatstat.geom_3.7-3        ", "[147] Matrix_1.7-5                RcppHNSW_0.6.0             ", "[149] patchwork_1.3.2             future_1.70.0              ", "[151] ggplot2_4.0.2               statmod_1.5.1              ", "[153] shiny_1.13.0                SummarizedExperiment_1.40.0", "[155] ROCR_1.0-12                 igraph_2.2.3               ", "[157] xgboost_3.2.1.1            "],
+  "package_installation_performed": false,
+  "expression_matrix_opened": false,
+  "internet_access_performed": false
+}

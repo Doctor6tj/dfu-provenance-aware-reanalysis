@@ -1,0 +1,325 @@
+M03 LOCAL METHOD API SNAPSHOT v1
+R_VERSION=R version 4.5.3 (2026-03-11 ucrt)
+CREATED_UTC=2026-08-25 10:53:56 UTC
+EXPRESSION_DATA_OPENED=FALSE
+EXPRESSION_ANALYSIS_PERFORMED=FALSE
+
+PACKAGE_VERSIONS
+oligo=1.74.0
+pd.hugene.1.0.st.v1=3.14.1
+hugene10sttranscriptcluster.db=8.8.0
+limma=3.66.0
+Biobase=2.70.0
+AnnotationDbi=1.72.0
+
+OLIGO_RMA_HELP
+_R_M_A - _R_o_b_u_s_t _M_u_l_t_i_c_h_i_p _A_v_e_r_a_g_e _a_l_g_o_r_i_t_h_m
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Robust Multichip Average preprocessing methodology. This strategy
+     allows background subtraction, quantile normalization and
+     summarization (via median-polish).
+
+_U_s_a_g_e:
+
+     ## S4 method for signature 'ExonFeatureSet'
+     rma(object, background=TRUE, normalize=TRUE, subset=NULL, target="core")
+       ## S4 method for signature 'HTAFeatureSet'
+     rma(object, background=TRUE, normalize=TRUE, subset=NULL, target="core")
+       ## S4 method for signature 'ExpressionFeatureSet'
+     rma(object, background=TRUE, normalize=TRUE, subset=NULL)
+       ## S4 method for signature 'GeneFeatureSet'
+     rma(object, background=TRUE, normalize=TRUE, subset=NULL, target="core")
+       ## S4 method for signature 'SnpCnvFeatureSet'
+     rma(object, background=TRUE, normalize=TRUE, subset=NULL)
+     
+_A_r_g_u_m_e_n_t_s:
+
+  object: Exon/HTA/Expression/Gene/SnpCnv-FeatureSet object.
+
+background: Logical - perform RMA background correction?
+
+normalize: Logical - perform quantile normalization?
+
+  subset: To be implemented.
+
+  target: Level of summarization (only for Exon/Gene arrays)
+
+_M_e_t_h_o_d_s:
+
+     'signature(object = "ExonFeatureSet")' When applied to an
+          'ExonFeatureSet' object, 'rma' can produce summaries at
+          different levels: probeset (as defined in the PGF), core
+          genes (as defined in the core.mps file), full genes (as
+          defined in the full.mps file) or extended genes (as defined
+          in the extended.mps file). To determine the level for
+          summarization, use the 'target' argument.
+
+     'signature(object = "ExpressionFeatureSet")' When used on an
+          'ExpressionFeatureSet' object, 'rma' produces summaries at
+          the probeset level (as defined in the CDF or NDF files,
+          depending on the manufacturer).
+
+     'signature(object = "GeneFeatureSet")' When applied to a
+          'GeneFeatureSet' object, 'rma' can produce summaries at
+          different levels: probeset (as defined in the PGF) and 'core
+          genes' (as defined in the core.mps file). To determine the
+          level for summarization, use the 'target' argument.
+
+     'signature(object = "HTAFeatureSet")' When applied to a
+          'HTAFeatureSet' object, 'rma' can produce summaries at
+          different levels: probeset (as defined in the PGF) and 'core
+          genes' (as defined in the core.mps file). To determine the
+          level for summarization, use the 'target' argument.
+
+     'signature(object = "SnpCnvFeatureSet")' If used on a
+          'SnpCnvFeatureSet' object (ie., SNP 5.0 or SNP 6.0 arrays),
+          'rma' will produce summaries for the CNV probes. Note that
+          this is an experimental feature for internal (and quick)
+          assessment of CNV probes. We recommend the use of the 'crlmm'
+          package, which contains a Copy Number tool specifically
+          designed for these data.
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Rafael. A. Irizarry, Benjamin M. Bolstad, Francois Collin, Leslie
+     M. Cope, Bridget Hobbs and Terence P. Speed (2003), Summaries of
+     Affymetrix GeneChip probe level data Nucleic Acids Research
+     31(4):e15
+
+     Bolstad, B.M., Irizarry R. A., Astrand M., and Speed, T.P. (2003),
+     A Comparison of Normalization Methods for High Density O
+     ligonucleotide Array Data Based on Bias and Variance.
+     Bioinformatics 19(2):185-193
+
+     Irizarry, RA, Hobbs, B, Collin, F, Beazer-Barclay, YD, Antonellis,
+     KJ, Scherf, U, Speed, TP (2003) Exploration, Normalizati on, and
+     Summaries of High Density Oligonucleotide Array Probe Level Data.
+     Biostatistics. Vol. 4, Number 2: 249-264
+
+_S_e_e _A_l_s_o:
+
+     'snprma'
+
+_E_x_a_m_p_l_e_s:
+
+     if (require(maqcExpression4plex) & require(pd.hg18.60mer.expr)){
+     xysPath <- system.file("extdata", package="maqcExpression4plex")
+     xysFiles <- list.xysfiles(xysPath, full.name=TRUE)
+     ngsExpressionFeatureSet <- read.xysfiles(xysFiles)
+     summarized <- rma(ngsExpressionFeatureSet)
+     show(summarized)
+     }
+     
+
+OLIGO_READ_CELFILES_HELP
+_P_a_r_s_e_r _t_o _C_E_L _f_i_l_e_s
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Reads CEL files.
+
+_U_s_a_g_e:
+
+     read.celfiles(..., filenames, pkgname, phenoData, featureData,
+     experimentData, protocolData, notes, verbose=TRUE, sampleNames,
+     rm.mask=FALSE, rm.outliers=FALSE, rm.extra=FALSE, checkType=TRUE)
+     
+     read.celfiles2(channel1, channel2, pkgname, phenoData, featureData,
+     experimentData, protocolData, notes, verbose=TRUE, sampleNames,
+     rm.mask=FALSE, rm.outliers=FALSE, rm.extra=FALSE, checkType=TRUE)
+     
+_A_r_g_u_m_e_n_t_s:
+
+     ...: names of files to be read.
+
+filenames: a 'character' vector with the CEL filenames.
+
+channel1: a 'character' vector with the CEL filenames for the first
+          'channel' on a Tiling application
+
+channel2: a 'character' vector with the CEL filenames for the second
+          'channel' on a Tiling application
+
+ pkgname: alternative data package to be loaded.
+
+phenoData: 'phenoData'
+
+featureData: 'featureData'
+
+experimentData: 'experimentData'
+
+protocolData: 'protocolData'
+
+   notes: 'notes'
+
+ verbose: 'logical'
+
+sampleNames: 'character' vector with sample names (usually better
+          descriptors than the filenames)
+
+ rm.mask: 'logical'. Read masked?
+
+rm.outliers: 'logical'. Remove outliers?
+
+rm.extra: 'logical'. Remove extra?
+
+checkType: 'logical'. Check type of each file? This can be time
+          consuming.
+
+_D_e_t_a_i_l_s:
+
+     When using 'affyio' to read in CEL files, the user can read
+     compressed CEL files (CEL.gz). Additionally, 'affyio' is much
+     faster than 'affxparser'.
+
+     The function guesses which annotation package to use from the
+     header of the CEL file. The user can also provide the name of the
+     annotaion package to be used (via the 'pkgname' argument). If the
+     annotation package cannot be loaded, the function returns an
+     error. If the annotation package is not available from
+     BioConductor, one can use the 'pdInfoBuilder' package to build
+     one.
+
+_V_a_l_u_e:
+
+ExpressionFeatureSet: if Expresssion arrays
+
+ExonFeatureSet: if Exon arrays
+
+SnpFeatureSet: if SNP arrays
+
+TilingFeatureSet: if Tiling arrays
+
+_S_e_e _A_l_s_o:
+
+     'list.celfiles', 'read.xysfiles'
+
+_E_x_a_m_p_l_e_s:
+
+     if(require(pd.mapping50k.xba240) & require(hapmap100kxba)){
+     celPath <- system.file("celFiles", package="hapmap100kxba")
+     celFiles <- list.celfiles(celPath, full.name=TRUE)
+     affySnpFeatureSet <- read.celfiles(celFiles)
+     }
+     
+
+LIMMA_FORMALS
+$lmFit
+$lmFit$object
+
+
+$lmFit$design
+NULL
+
+$lmFit$ndups
+NULL
+
+$lmFit$spacing
+NULL
+
+$lmFit$block
+NULL
+
+$lmFit$correlation
+
+
+$lmFit$weights
+NULL
+
+$lmFit$method
+[1] "ls"
+
+$lmFit$...
+
+
+
+$makeContrasts
+$makeContrasts$...
+
+
+$makeContrasts$contrasts
+NULL
+
+$makeContrasts$levels
+
+
+
+$contrasts.fit
+$contrasts.fit$fit
+
+
+$contrasts.fit$contrasts
+NULL
+
+$contrasts.fit$coefficients
+NULL
+
+
+$eBayes
+$eBayes$fit
+
+
+$eBayes$proportion
+[1] 0.01
+
+$eBayes$stdev.coef.lim
+c(0.1, 4)
+
+$eBayes$trend
+[1] FALSE
+
+$eBayes$span
+NULL
+
+$eBayes$robust
+[1] FALSE
+
+$eBayes$winsor.tail.p
+c(0.05, 0.1)
+
+$eBayes$legacy
+NULL
+
+
+$topTable
+$topTable$fit
+
+
+$topTable$coef
+NULL
+
+$topTable$number
+[1] 10
+
+$topTable$genelist
+fit$genes
+
+$topTable$adjust.method
+[1] "BH"
+
+$topTable$sort.by
+[1] "B"
+
+$topTable$resort.by
+NULL
+
+$topTable$p.value
+[1] 1
+
+$topTable$fc
+NULL
+
+$topTable$lfc
+NULL
+
+$topTable$confint
+[1] FALSE
+
+
+
+ANNOTATION_KEYTYPES
+ACCNUM,ALIAS,ENSEMBL,ENSEMBLPROT,ENSEMBLTRANS,ENTREZID,ENZYME,EVIDENCE,EVIDENCEALL,GENENAME,GENETYPE,GO,GOALL,IPI,MAP,OMIM,ONTOLOGY,ONTOLOGYALL,PATH,PFAM,PMID,PROBEID,PROSITE,REFSEQ,SYMBOL,UCSCKG,UNIPROT
+ANNOTATION_COLUMNS
+ACCNUM,ALIAS,ENSEMBL,ENSEMBLPROT,ENSEMBLTRANS,ENTREZID,ENZYME,EVIDENCE,EVIDENCEALL,GENENAME,GENETYPE,GO,GOALL,IPI,MAP,OMIM,ONTOLOGY,ONTOLOGYALL,PATH,PFAM,PMID,PROBEID,PROSITE,REFSEQ,SYMBOL,UCSCKG,UNIPROT

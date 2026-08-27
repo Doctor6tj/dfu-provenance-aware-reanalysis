@@ -1,0 +1,31 @@
+# Recorded package versions for the accepted R 4.5.3 workflows.
+# Bioconductor packages should be installed with a Bioconductor release compatible with R 4.5.x.
+AnnotationDbi==1.72.0
+Biobase==2.70.0
+BiocParallel==1.44.0
+digest==0.6.39
+edgeR==4.8.2
+ggplot2==4.0.2
+jsonlite==2.0.0
+limma==3.66.0
+Matrix==1.7-5
+oligo==1.74.0
+pd.hugene.1.0.st.v1==3.14.1
+hugene10sttranscriptcluster.db==8.8.0
+RANN==2.6.2
+scDblFinder==1.24.10
+scuttle==1.20.0
+Seurat==5.4.0
+SeuratObject==5.4.0
+SingleCellExperiment==1.32.0
+SummarizedExperiment==1.40.0
+uwot==0.2.4
+xgboost==3.2.1.1
+data.table
+ggrepel
+gtable
+patchwork
+scales
+statmod==1.5.1
+systemfonts
+

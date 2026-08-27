@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M05_ROBUSTNESS_SYNTHESIS",
+  "parameter_version": "v1",
+  "scope": "Null-safe study-aware robustness adjudication using accepted M03/M04 gene effects only; no expression recomputation, meta-analysis, or pathway enrichment",
+  "input_authority": {
+    "l3_plan": {"path": "02_protocol_and_design/locks/L3_ANALYSIS_STATISTICAL_PLAN_v1.json", "sha256": "424846bec5345b655744ff000ecc8351e6130c25e9571b5c09c3c34350ba2541"},
+    "mvm_plan": {"path": "02_protocol_and_design/MVM_PLAN.json", "sha256": "13e9cd32c7b07ee8d74b837cbb20934062c4d781ee2ec929c49c9b45a4f79e72"},
+    "m02_result_lock": {"path": "06_locked_results/modules/M02_COHORT_HARMONIZATION/v1/M02_RESULT_LOCK_v1.json", "sha256": "121a4d3f2c39cf705518544ca97087938f4118d67aaf7b40f460b79001844063"},
+    "m03_result_lock": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/M03_RESULT_LOCK_v1.json", "sha256": "4c73b8082bd7e38f5e65b71d661b6de04122d1507fb098eaab64305880822dfa"},
+    "m03_accepted_manifest": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/M03_ACCEPTED_OBJECT_MANIFEST_v1.csv", "sha256": "fcd4bc2404fa4fb5870135865bb8bcbaa81ae534b2bacf2861247ec818d1fee4"},
+    "m03_final_dod": {"path": "08_qc/M03_V3_FINAL_DOD_AND_STATE_QC_20260825.json", "sha256": "6751e3775391e206e67c6a7a0f01e896c798e96fbca99a66c73b9dbae8c5a023"},
+    "all12_DFU_vs_DFS": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/primary_all12/M03_gene_effects_DFU_vs_DFS.tsv.gz", "sha256": "1c4771067c264404ada1ffdb4506e81df67296ddb21adc81d5e91ceee8eb7525"},
+    "all12_DFU_vs_NFS": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/primary_all12/M03_gene_effects_DFU_vs_NFS.tsv.gz", "sha256": "1443b2001ee097ab6a4fb0ae33830ef489373148d8b1cf4918f44e34807c31d9"},
+    "all12_DFU_vs_FS_NAIVE": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/primary_all12/M03_gene_effects_DFU_vs_FS_NAIVE.tsv.gz", "sha256": "b4acdc3245faf06d8a8ff56c0bf7ef979710a9ff682c47feeba0aa590e2757a2"},
+    "n11_DFU_vs_DFS": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/sensitivity_n11_exclude_GSM2114233/M03_gene_effects_DFU_vs_DFS.tsv.gz", "sha256": "9f491e4cb777e310071fc1978b2b42dbb0d897ab51d2825709336f59a05935cc"},
+    "n11_DFU_vs_NFS": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/sensitivity_n11_exclude_GSM2114233/M03_gene_effects_DFU_vs_NFS.tsv.gz", "sha256": "e9027ee905246726f2bfaf82e0f379181aff1691dc0c815b511ff512e8764da6"},
+    "n11_DFU_vs_FS_NAIVE": {"path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/sensitivity_n11_exclude_GSM2114233/M03_gene_effects_DFU_vs_FS_NAIVE.tsv.gz", "sha256": "b29d9bb548de7d9ac242ba6e21e426d819e72a2f5710a7e59634a714446b3e69"},
+    "m04_result_lock": {"path": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY/v1/M04_RESULT_LOCK_v1.json", "sha256": "90fff5a7ae328611294acfc9062730875fb749bcfb74a97f73d022ace5a8cebe"},
+    "m04_accepted_manifest": {"path": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY/v1/M04_ACCEPTED_OBJECT_MANIFEST_v1.csv", "sha256": "0bf5a95636165e327c7a4e8f24c4429fef911e1f652fe075c544190045f146a3"},
+    "m04_final_dod": {"path": "08_qc/M04_FINAL_DOD_AND_STATE_QC_v2_20260825.json", "sha256": "19208580100436ff7538f7e3487c1dca661dbe09bf85aa5490e29132d660b08a"},
+    "m04_all12_classification": {"path": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY/v1/accepted_candidate/M04_gene_comparator_classification_ALL12_PRIMARY.tsv.gz", "sha256": "378618a9632e14b1f870f55078aecd8c2e2d7020e1138ea4f502166f9db5bee6"},
+    "m04_n11_classification": {"path": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY/v1/accepted_candidate/M04_gene_comparator_classification_N11_EXCLUDE_GSM2114233_SENSITIVITY.tsv.gz", "sha256": "86d0d26bfa0008a5bf4b1516bd17a040d2426537e846d570934dd4c50a5e6b9d"},
+    "m04_axis_summary": {"path": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY/v1/accepted_candidate/M04_axis_interpretation_summary.csv", "sha256": "a9b599607cb477cfbdf07c7de1a4048d0867e4593b638e9f376d19b6b8e7092d"},
+    "robustness_rules": {"path": "04_code/configs/M05_robustness_adjudication_rules_v1.csv", "sha256": "08e59354298c6b013ddf2ae132293db16f24483867892d5937608c937472c381"},
+    "tier_rules": {"path": "04_code/configs/M05_evidence_tier_rules_v1.csv", "sha256": "25c95c2866d2e1fd34cdb43fd8fb737889a90559d60ae01e12755d877819200b"}
+  },
+  "software": {"Python": "3.12.10", "standard_library_only": true, "package_installation_allowed": false},
+  "independence": {
+    "unit": "independent biologically compatible study",
+    "naive_accession_count": 2,
+    "provenance_aware_independent_core_study_count": 1,
+    "minimum_independent_studies_for_cross_study_robustness": 2,
+    "cross_study_meta_analysis_eligible": false,
+    "leave_one_study_out_eligible": false
+  },
+  "gene_adjudication": {
+    "gene_namespace": "NCBI ENTREZID with M03 SYMBOL and GENENAME",
+    "primary_profile": "ALL12_PRIMARY",
+    "sensitivity_profile": "N11_EXCLUDE_GSM2114233_SENSITIVITY_ONLY",
+    "compatible_primary_contrasts": ["DFU_vs_DFS", "DFU_vs_NFS"],
+    "naive_contrast": "DFU_vs_FS_NAIVE",
+    "bh_fdr_threshold": 0.05,
+    "fold_change_threshold": null,
+    "same_direction_definition": "all required nonzero logFC values have one identical sign",
+    "robust_gene_requires_all_gates": true,
+    "robust_signal_count_may_be_zero": true
+  },
+  "pathway_boundary": {
+    "cross_study_pathway_synthesis_performed": false,
+    "reason": "Only one independent compatible core study is available and no prospectively locked external pathway collection is required for the MVM stop-loss route",
+    "new_gene_set_download_allowed": false,
+    "within_study_pathway_discovery_performed": false,
+    "interpretation": "PATHWAY_ROBUSTNESS_NOT_ESTIMABLE; no pathway is promoted or tested in M05"
+  },
+  "prespecified_outputs": {
+    "gene_rows_expected": 18865,
+    "robust_cross_study_gene_count_expected_by_independence_gate": 0,
+    "valid_null_status": "INSUFFICIENT_INDEPENDENT_COMPATIBLE_EVIDENCE_NO_ROBUST_SIGNAL",
+    "figure4_role": "Evidence-boundary and tier-count source; not a robust-gene heatmap if robust count is zero"
+  },
+  "execution_control": {
+    "foreground_only": true,
+    "background_allowed": false,
+    "output_overwrite_allowed": false,
+    "unique_run_directory_required": true,
+    "randomness": "NONE",
+    "expected_runtime_minutes": 2,
+    "hard_timeout_minutes": 30,
+    "source_modification_allowed": false,
+    "intermediate_hash_policy": "Verify trust-boundary inputs once; hash final deliverables once; do not repeatedly hash intermediates"
+  },
+  "forbidden_operations": [
+    "recompute expression or differential expression",
+    "count GSE68183 as an independent study",
+    "perform meta-analysis or leave-one-study-out with one independent study",
+    "use pooled DFS/NFS significance to establish robustness",
+    "promote n11 sensitivity-only genes",
+    "select a pathway collection after inspecting enrichment results",
+    "include GSE199939 in core or GSE165816 in M05",
+    "install packages or access the internet during execution",
+    "overwrite any prior run archive or accepted result"
+  ],
+  "unknown_historical_defaults": [],
+  "declared_tolerance": {"numeric_absolute": 1e-12, "numeric_relative": 1e-12, "categorical": "exact"}
+}

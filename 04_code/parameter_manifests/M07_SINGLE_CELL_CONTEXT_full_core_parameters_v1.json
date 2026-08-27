@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M07_SINGLE_CELL_CONTEXT",
+  "parameter_version": "full_core_v1",
+  "created_at": "2026-08-25T17:49:04Z",
+  "status": "PROSPECTIVE_LOCK_CANDIDATE_NOT_EXECUTED",
+  "execution_mode": "FULL_CORE_PARTICIPANT_LEVEL",
+  "analysis_role": "SUPPORTING_EXPLORATORY_VALUE_ADD",
+  "condition_inference_allowed": true,
+  "inputs": {
+    "core_manifest": "04_code/configs/M07_full_core_foot_libraries_v1.csv",
+    "annotation_dictionary": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/preflight/M07_SOURCE_LINKED_ANNOTATION_DICTIONARY_v1_20260826/M07_PRIMARY_FOOT_ANNOTATION_DICTIONARY_v1.csv",
+    "annotation_crosswalk": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/preflight/M07_SOURCE_LINKED_ANNOTATION_DICTIONARY_v1_20260826/M07_CELL_TYPE_LABEL_CROSSWALK_v1.csv",
+    "he_fibro_signature": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/preflight/M07_SOURCE_LINKED_ANNOTATION_DICTIONARY_v1_20260826/M07_HE_FIBRO_PRESPECIFIED_SIGNATURE_v1.csv",
+    "participant_map": "06_locked_results/modules/M01_PROVENANCE_AUDIT/v1_remaining_dataset_audit/gse165816_participant_sample_map.csv",
+    "count_manifest": "03_data/metadata/hash_manifests/copied/GSE165816_counts.csv",
+    "l3_plan": "02_protocol_and_design/locks/L3_ANALYSIS_STATISTICAL_PLAN_v1.json",
+    "technical_pilot_result_lock": "06_locked_results/modules/M07_SINGLE_CELL_CONTEXT/technical_pilot_v1/M07_TECHNICAL_PILOT_RESULT_LOCK_v1.json",
+    "author_go_decision": "02_protocol_and_design/change_control/M07_FULL_ANALYSIS_GO_WITH_CONDITIONS_AUTHOR_DECISION_20260826.json"
+  },
+  "core": {
+    "dataset": "GSE165816",
+    "compartment": "FOOT_SKIN_ONLY",
+    "expected_library_count": 14,
+    "expected_participant_count": 11,
+    "expected_cells_pre_qc": 45514,
+    "groups": {
+      "DFU_HEALER": {
+        "participants": 7,
+        "libraries": 9,
+        "cells_pre_qc": 28365
+      },
+      "DFU_NONHEALER": {
+        "participants": 4,
+        "libraries": 5,
+        "cells_pre_qc": 17149
+      }
+    },
+    "primary_contrast": "DFU_NONHEALER_MINUS_DFU_HEALER",
+    "positive_logfc_rule": "higher_in_nonhealer",
+    "independence_unit": "participant_alias",
+    "gse199939_role": "EXCLUDED_FROM_CORE"
+  },
+  "conversion": {
+    "input_orientation": "FEATURES_BY_CELLS_HEADER_HAS_CELL_BARCODES_ONLY",
+    "feature_id_column": "IMPLICIT_UNNAMED_FIRST_DATA_COLUMN",
+    "chunk_rows": 256,
+    "count_dtype": "int32",
+    "duplicate_feature_rule": "sum exact duplicate feature IDs within library",
+    "gene_union_rule": "sort exact union across libraries and fill absent features with structural zeros",
+    "cell_id_rule": "GSM_accession + '__' + source_barcode",
+    "dense_full_matrix_forbidden": true,
+    "source_hash_policy": "inherit COPY008 hash match; verify manifest identity/existence/size and do not rehash source matrices"
+  },
+  "qc": {
+    "apply_within_library": true,
+    "mitochondrial_gene_regex": "^MT-",
+    "hard_min_detected_features": 200,
+    "hard_max_mitochondrial_percent": 50,
+    "robust_metrics": [
+      "log10(total_counts+1)",
+      "log10(detected_features+1)",
+      "mitochondrial_percent"
+    ],
+    "robust_nmads": 3,
+    "mad_scale_constant": 1.4826,
+    "counts_and_features_tails": "LOW_AND_HIGH",
+    "mitochondrial_tail": "HIGH_ONLY",
+    "zero_mad_rule": "No adaptive flag for a zero-MAD metric; hard gates remain active."
+  },
+  "doublet": {
+    "method": "scDblFinder_1.24.10_per_library",
+    "minimum_cells_for_scDblFinder": 200,
+    "dbr": null,
+    "dbr_per_1k": 0.008,
+    "nfeatures": 1352,
+    "dims": 20,
+    "include_pcs": 19,
+    "score": "xgb",
+    "metric": "logloss",
+    "nrounds": 0.25,
+    "max_depth": 4,
+    "iterations": 3,
+    "parallel_backend": "BiocParallel::SerialParam(progressbar=FALSE)",
+    "retained_class": "singlet"
+  },
+  "normalization": {
+    "method": "Seurat LogNormalize",
+    "scale_factor": 10000,
+    "inference_role": "NONE"
+  },
+  "clustering": {
+    "variable_feature_method": "vst",
+    "variable_features": 2000,
+    "npcs": 30,
+    "neighbor_pcs": 20,
+    "k_neighbors": 20,
+    "prune_snn": 0.06666666666666667,
+    "neighbor_method": "rann",
+    "clustering_algorithm": 1,
+    "resolution": 0.6,
+    "n_start": 10,
+    "n_iter": 10,
+    "umap_method": "uwot",
+    "umap_neighbors": 30,
+    "umap_min_dist": 0.3,
+    "umap_metric": "cosine",
+    "clinical_group_present_in_object_during_clustering": false,
+    "inference_role": "NONE",
+    "deprecated_findclusters_method_argument_removed": true
+  },
+  "annotation": {
+    "canonical_label_count": 21,
+    "canonical_labels": [
+      "BASAL_KERATINOCYTE",
+      "B_LYMPHOCYTE",
+      "CD14_MONOCYTE",
+      "CD16_MONOCYTE",
+      "DENDRITIC_CELL",
+      "DIFFERENTIATED_KERATINOCYTE",
+      "ERYTHROCYTE",
+      "FIBROBLAST",
+      "HEALING_ASSOCIATED_FIBROBLAST_STATE",
+      "LYMPHATIC_ENDOTHELIAL",
+      "M1_LIKE_MACROPHAGE",
+      "M2_LIKE_MACROPHAGE",
+      "MAST_CELL",
+      "MELANOCYTE_SCHWANN_COMBINED",
+      "NATURAL_KILLER",
+      "NKT",
+      "PLASMA_CELL",
+      "SMOOTH_MUSCLE",
+      "SWEAT_SEBACEOUS",
+      "T_LYMPHOCYTE",
+      "VASCULAR_ENDOTHELIAL"
+    ],
+    "foot_source_priority": [
+      "MOESM6",
+      "MOESM5"
+    ],
+    "marker_score": "Mean per-gene cluster z score using log-normalized expression",
+    "minimum_markers_available": 3,
+    "minimum_score_margin": 0.25,
+    "below_margin_label": "UNRESOLVED",
+    "moesm7_role": "FIBROBLAST_SUBCLUSTER_REFERENCE_ONLY",
+    "clinical_group_blinded": true,
+    "outcome_differential_expression_used": false
+  },
+  "inference": {
+    "aggregation": "sum retained raw counts across all same-participant foot libraries by participant_alias and locked cell type",
+    "min_cells_per_participant_cell_type": 20,
+    "min_total_counts_per_participant_cell_type": 1000,
+    "min_eligible_participants_per_group": 3,
+    "model": "edgeR robust quasi-likelihood negative-binomial GLM",
+    "design": "~ 0 + biological_group",
+    "contrast": "DFU_NONHEALER_MINUS_DFU_HEALER",
+    "covariates": [],
+    "filter_by_expr": {
+      "min_count": 10,
+      "min_total_count": 15,
+      "large_n": 10,
+      "min_prop": 0.7
+    },
+    "normalization": "TMM",
+    "dispersion": "estimateDisp robust=TRUE",
+    "fit": "glmQLFit robust=TRUE",
+    "primary_multiplicity": "BH globally across all eligible gene-by-cell-type tests",
+    "primary_fdr": 0.05,
+    "fold_change_threshold": null,
+    "within_cell_type_fdr_role": "EXPLORATORY_ONLY",
+    "cell_level_or_library_level_group_test_allowed": false,
+    "valid_null": "No eligible cell type or zero global-FDR findings is a valid reportable result."
+  },
+  "cell_type_abundance": {
+    "unit": "participant",
+    "denominator": "all retained core-foot cells within participant",
+    "role": "SECONDARY_EXPLORATORY_DESCRIPTIVE",
+    "outputs": "participant fractions, group medians/IQRs, nonhealer-minus-healer median difference",
+    "inferential_test": "NONE_DUE_SMALL_N",
+    "cell_level_test_allowed": false
+  },
+  "he_fibro": {
+    "signature_genes": 18,
+    "eligible_labels": [
+      "FIBROBLAST",
+      "HEALING_ASSOCIATED_FIBROBLAST_STATE"
+    ],
+    "score": "participant-celltype mean log2 CPM across present prespecified genes",
+    "role": "DESCRIPTIVE_VALIDATION_ONLY",
+    "outcome_used_to_define_state": false
+  },
+  "seeds": {
+    "doublet_base": 20260825,
+    "pca": 20260826,
+    "clustering": 20260827,
+    "umap": 20260828
+  },
+  "resource_limits": {
+    "peak_process_tree_rss_gib_max": 24,
+    "new_disk_gib_max": 15,
+    "runtime_minutes_max": 180,
+    "poll_seconds": 2
+  },
+  "environment": {
+    "manifest": "04_code/environments/M07_full_core_v1/environment_manifest_v1.json",
+    "python_executable": "python",
+    "rscript_executable": "Rscript"
+  },
+  "code": {
+    "orchestrator": "04_code/Python/m07_run_full_core_foreground_v1.py",
+    "converter": "04_code/Python/m07_convert_full_core_to_sparse_mtx_v1.py",
+    "converter_dependency": "04_code/Python/m07_convert_csv_counts_to_sparse_mtx_v1.py",
+    "r_pilot_helpers_dependency": "04_code/R/m07_pilot_helpers_v1.R",
+    "r_full_helpers": "04_code/R/m07_full_analysis_helpers_v1.R",
+    "r_full": "04_code/R/m07_run_full_core_analysis_v1.R",
+    "validator": "04_code/R/m07_validate_full_core_analysis_v1.R",
+    "helper_tests": "04_code/tests/test_m07_full_analysis_helpers_v1.R"
+  },
+  "execution_control": {
+    "authorized_run_directory": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/runs/M07_FULL_CORE_V1_20260826T000000Z",
+    "required_authorization_record": "02_protocol_and_design/change_control/M07_FULL_CORE_EXACT_EXECUTION_AUTHORIZATION_20260826.json",
+    "foreground_only": true,
+    "background_allowed": false,
+    "output_overwrite_allowed": false,
+    "partial_run_resume_allowed": false,
+    "package_installation_during_run_allowed": false,
+    "internet_access_during_run_allowed": false,
+    "source_modification_allowed": false,
+    "analysis_execution_authorized": false,
+    "intermediate_hash_policy": "Verify trust-boundary inputs once and final deliverables once; do not repeatedly hash intermediates."
+  },
+  "forbidden_operations": [
+    "cell-level or library-level clinical-group testing",
+    "pool foot skin with forearm skin or PBMC",
+    "use GSE199939 in the core cohort",
+    "use clinical group labels during clustering or annotation",
+    "use integrated or normalized expression for differential inference",
+    "post-hoc change to eligibility, contrast, covariates, gene filter or multiplicity",
+    "install packages or access internet during the analysis run",
+    "convert the full expression matrix to dense form",
+    "overwrite or resume a partial run directory"
+  ],
+  "unknown_historical_defaults": []
+}

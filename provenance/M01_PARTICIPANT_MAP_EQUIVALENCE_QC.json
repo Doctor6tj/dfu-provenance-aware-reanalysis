@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "check": "PUBLIC_PYTHON_REPLACEMENT_VS_ACCEPTED_GSE165816_PARTICIPANT_MAP",
+  "status": "PASS",
+  "expected_rows": 54,
+  "observed_rows": 54,
+  "logical_cell_equality": true,
+  "original_executed_script": "m01_extract_gse165816_participant_map.mjs",
+  "original_executed_script_sha256": "98ce2889f0df83993e12d80fbc70589e1ef319cfa0e9b99012281ef81b3c8f48",
+  "public_replacement_script": "04_code/Python/m01_extract_gse165816_participant_map.py",
+  "public_replacement_script_sha256_at_equivalence_check": "237eb3267780e77c1a9fa3bbb86b1cf96e24f1c0c8dccc365c1d6e99d2372154",
+  "analysis_rerun": false,
+  "note": "The public replacement preserves the accepted row, group, participant, and tissue mapping logic without the internal workbook runtime dependency."
+}

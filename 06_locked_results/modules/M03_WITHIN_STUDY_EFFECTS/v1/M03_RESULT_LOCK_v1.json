@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M03_WITHIN_STUDY_EFFECTS",
+  "version": "v1",
+  "status": "ACCEPTED_LOCKED_PASS_WITH_LIMITATION",
+  "accepted_at": "2026-08-25T13:00:12.401988+00:00",
+  "scientific_boundary": "GSE80178 within-study expression effects only; all 12 arrays are primary and n=11 excluding GSM2114233 is sensitivity only.",
+  "primary_authority": "ALL12_PRIMARY",
+  "sensitivity_authority": "N11_EXCLUDE_GSM2114233_SENSITIVITY_ONLY",
+  "author_route_lock_id": "L3B_M03_QC_ROUTE_AUTHOR_DECISION_v1",
+  "execution_lock_id": "L5H_M03_V3_DUAL_ROUTE_EXECUTION_v1",
+  "source_archive": {
+    "archive_id": "DFU_PRR_2026__M03_WITHIN_STUDY_EFFECTS__v3",
+    "path": "06_locked_results/reproducibility_archives/M03_WITHIN_STUDY_EFFECTS_V3_POST_RUN_v3",
+    "lock_sha256": "195c8217b13dfb888e7c34a0ba1f18cfa0d0dfe3bc6e0cfe00c96a1326d65789",
+    "status": "REPRODUCIBILITY_FULL"
+  },
+  "accepted_sources": {
+    "primary_run_id": "M03_GSE80178_V3_PRIMARY_20260825T121000Z",
+    "sensitivity_run_id": "M03_GSE80178_V3_SENS_EXCL_GSM2114233_20260825T122000Z",
+    "comparison_run_id": "M03_GSE80178_V3_COMPARISON_20260825T123000Z"
+  },
+  "acceptance_checks": {
+    "four_saved_validators": "PASS_32_OF_32_EACH",
+    "deterministic_equivalence": "PASS_38_OF_38",
+    "closeout_qc": "PASS_20_OF_20_WITH_LIMITATION",
+    "skill8_validation": "PASS_ZERO_ISSUES_ZERO_GAPS",
+    "promotion_byte_identity": true,
+    "source_overwrite_performed": false,
+    "expression_recalculation_performed": false
+  },
+  "primary_gene_BH_FDR_lt_0_05": {
+    "DFU_vs_DFS": 0,
+    "DFU_vs_NFS": 0,
+    "DFU_vs_FS_NAIVE": 0,
+    "DFS_vs_NFS": 0
+  },
+  "sensitivity_gene_BH_FDR_lt_0_05": {
+    "DFU_vs_DFS": 0,
+    "DFU_vs_NFS": 1,
+    "DFU_vs_FS_NAIVE": 9,
+    "DFS_vs_NFS": 0
+  },
+  "accepted_interpretation": [
+    "No gene reaches BH FDR < 0.05 in either prespecified all-12 primary DFU contrast.",
+    "Primary and GSM2114233-exclusion sensitivity effects are globally stable across all declared feature- and gene-level contrasts.",
+    "Threshold-level significance is sample-sensitive: CBLL2 is significant only in sensitivity DFU_vs_NFS, and nine genes are significant only in the naive merged-control sensitivity contrast."
+  ],
+  "mandatory_limitations": [
+    "GSM2114233 is a multi-metric QC outlier retained in the primary analysis under the author-approved route.",
+    "Unique ENTREZ mapping yield is diagnostic and limits annotation coverage.",
+    "Sensitivity-only significance must not be presented as a robust primary gene finding.",
+    "The naive merged-control contrast is sensitivity-only; DFS and NFS remain separate primary comparators."
+  ],
+  "cannot_conclude": [
+    "No primary gene-level differential-expression discovery at BH FDR < 0.05 can be claimed from GSE80178.",
+    "CBLL2 or any naive-contrast sensitivity-only gene cannot be claimed as a validated DFU biomarker from M03 alone.",
+    "Internal deterministic reproduction does not establish external biological validation."
+  ],
+  "accepted_object_manifest": {
+    "path": "M03_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+    "rows": 66,
+    "sha256": "fcd4bc2404fa4fb5870135865bb8bcbaa81ae534b2bacf2861247ec818d1fee4"
+  },
+  "next_gate": "G4_M04_CROSS_STUDY_ROBUSTNESS",
+  "mutation_rule": "Do not modify this accepted result. Any correction requires SQ2 change control and a new accepted version."
+}

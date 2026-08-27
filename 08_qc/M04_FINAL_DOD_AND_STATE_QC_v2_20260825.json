@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M04_NAIVE_VS_AWARE_SENSITIVITY",
+  "generated_at_utc": "2026-08-25T14:24:58Z",
+  "verdict": "PASS",
+  "checks_total": 25,
+  "checks_passed": 25,
+  "checks": [
+    {
+      "check_id": "DOD_CONTRACT",
+      "pass": true,
+      "observed": "VALID",
+      "expected": "VALID"
+    },
+    {
+      "check_id": "DOD_SCOPE",
+      "pass": true,
+      "observed": [
+        "GSE68183 is not independent replication evidence for GSE80178",
+        "Pooled DFS/NFS findings are not eligible as primary comparator findings",
+        "M04 does not select robust genes; M05 owns that decision",
+        "Independent leave-one-study-out replication is not estimable with one core local-DFU study"
+      ],
+      "expected": "M04 sensitivity only; M05 authority"
+    },
+    {
+      "check_id": "DOD_UPSTREAM_LOCKS",
+      "pass": true,
+      "observed": [
+        "L0_AUTHOR_SCRIPT_FIRST_EXECUTION_POLICY_v1",
+        "L0B_AUTHOR_FILESYSTEM_AND_HASH_POLICY_v1",
+        "L1_SCIENTIFIC_QUESTION_v1",
+        "L2_DATASET_ROLES_INDEPENDENCE_v1",
+        "L3_ANALYSIS_STATISTICAL_PLAN_v1",
+        "L3B_M03_QC_ROUTE_AUTHOR_DECISION_v1",
+        "L5_M01_PROVENANCE_PILOT_v1",
+        "L5B_M01_DATASET_RELATIONSHIP_v1",
+        "L5C_M01_REMAINING_DATASET_AUDIT_v1",
+        "L5D_M01_AUTHOR_CLOSEOUT_v1",
+        "L5E_M02_COHORT_HARMONIZATION_v1",
+        "L4_M03_NONANALYTIC_PREFLIGHT_v1",
+        "L4B_M03_CORE_PLATFORM_READINESS_v1",
+        "L4C_M03_V3_PRE_RUN_ARCHIVE_v1",
+        "L5H_M03_V3_DUAL_ROUTE_EXECUTION_v1",
+        "L4D_M03_V3_POST_RUN_ARCHIVE_v3",
+        "L5I_M03_ACCEPTED_RESULT_v1",
+        "L5J_M03_FINAL_DOD_v1",
+        "L4E_M04_PRE_RUN_ARCHIVE_v1",
+        "L4F_M04_VALIDATOR_REPAIR_PRE_RUN_ARCHIVE_v1",
+        "L5L_M04_VALIDATOR_REPAIR_EXECUTION_v1",
+        "L4G_M04_POST_RUN_ARCHIVE_v1",
+        "L5N_M04_ACCEPTED_RESULT_v1"
+      ],
+      "expected": "all upstream locks active"
+    },
+    {
+      "check_id": "DOD_SCRIPT_FIRST",
+      "pass": true,
+      "observed": {
+        "archive": "PRE_RUN_LOCKED",
+        "code_objects": 24
+      },
+      "expected": "pre-run locked before repair execution"
+    },
+    {
+      "check_id": "DOD_INPUT_HASHES",
+      "pass": true,
+      "observed": 15,
+      "expected": 15
+    },
+    {
+      "check_id": "DOD_ALIAS_MANIFESTS",
+      "pass": true,
+      "observed": [
+        [
+          "PAIR001",
+          "M01_SHARED_FS_001",
+          "DFS"
+        ],
+        [
+          "PAIR002",
+          "M01_SHARED_FS_002",
+          "DFS"
+        ],
+        [
+          "PAIR003",
+          "M01_SHARED_FS_003",
+          "DFS"
+        ],
+        [
+          "PAIR004",
+          "M01_SHARED_FS_004",
+          "NFS"
+        ],
+        [
+          "PAIR005",
+          "M01_SHARED_FS_005",
+          "NFS"
+        ],
+        [
+          "PAIR006",
+          "M01_SHARED_FS_006",
+          "NFS"
+        ]
+      ],
+      "expected": "six unique tuples; DFS=3 NFS=3"
+    },
+    {
+      "check_id": "DOD_RAW_IDENTITY",
+      "pass": true,
+      "observed": [
+        "TRUE",
+        "TRUE",
+        "TRUE",
+        "TRUE",
+        "TRUE",
+        "TRUE"
+      ],
+      "expected": "all TRUE"
+    },
+    {
+      "check_id": "DOD_SEPARATE_PREPROCESSING",
+      "pass": true,
+      "observed": true,
+      "expected": "separate and no raw pooling"
+    },
+    {
+      "check_id": "DOD_PLATFORM",
+      "pass": true,
+      "observed": {
+        "R": "4.5.3",
+        "oligo": "1.74.0",
+        "pd.hugene.1.0.st.v1": "3.14.1",
+        "limma": "3.66.0",
+        "Biobase": "2.70.0",
+        "jsonlite": "2.0.0",
+        "digest": "0.6.39",
+        "package_installation_allowed": false
+      },
+      "expected": "GPL16686 and exact packages"
+    },
+    {
+      "check_id": "DOD_CONTROL_MODEL",
+      "pass": true,
+      "observed": {
+        "GSE68183": [
+          {
+            "gsm_accession": "GSM1665311",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM1665312",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM1665313",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM1665314",
+            "DFS": "0",
+            "NFS": "1"
+          },
+          {
+            "gsm_accession": "GSM1665315",
+            "DFS": "0",
+            "NFS": "1"
+          },
+          {
+            "gsm_accession": "GSM1665316",
+            "DFS": "0",
+            "NFS": "1"
+          }
+        ],
+        "GSE80178": [
+          {
+            "gsm_accession": "GSM2114237",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM2114238",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM2114239",
+            "DFS": "1",
+            "NFS": "0"
+          },
+          {
+            "gsm_accession": "GSM2114240",
+            "DFS": "0",
+            "NFS": "1"
+          },
+          {
+            "gsm_accession": "GSM2114241",
+            "DFS": "0",
+            "NFS": "1"
+          },
+          {
+            "gsm_accession": "GSM2114242",
+            "DFS": "0",
+            "NFS": "1"
+          }
+        ]
+      },
+      "expected": "two full-rank 6x2 indicator designs"
+    },
+    {
+      "check_id": "DOD_GENE_MAPPING",
+      "pass": true,
+      "observed": {
+        "reader": "oligo::read.celfiles",
+        "reader_pkgname": "pd.hugene.1.0.st.v1",
+        "method": "oligo::rma",
+        "background": true,
+        "normalize": true,
+        "summarization": "median-polish",
+        "target": "core",
+        "expression_scale": "log2",
+        "process_each_accession_container_separately": true,
+        "direct_cross_dataset_raw_pooling": false,
+        "annotation_authority": "Reuse the locked M03 feature-to-ENTREZ mapping without reannotation",
+        "gene_aggregation": "Median log2 expression across features with exactly one nonmissing ENTREZID"
+      },
+      "expected": "locked M03 mapping and median"
+    },
+    {
+      "check_id": "DOD_REUSE_EQUIVALENCE",
+      "pass": true,
+      "observed": [
+        {
+          "analysis_level": "FEATURE",
+          "left_specification": "GSE68183_ACCESSION",
+          "right_specification": "GSE80178_ALIAS_CONTROL_SUBSET",
+          "matched_objects": "33297",
+          "spearman_logFC": "1",
+          "sign_concordance": "1",
+          "maximum_absolute_logFC_difference": "0",
+          "top_n": "500",
+          "top_overlap": "500",
+          "top_jaccard": "1",
+          "left_BH_FDR_lt_0_05": "0",
+          "right_BH_FDR_lt_0_05": "0",
+          "significant_overlap": "0",
+          "maximum_absolute_expression_difference": "0",
+          "naive_independent_study_count": "2",
+          "provenance_aware_independent_study_count": "1",
+          "naive_accession_rows": "12",
+          "provenance_aware_unique_objects": "6",
+          "independent_replication_eligible": "FALSE",
+          "evidence_role": "PSEUDO_REPLICATION_FROM_EXACT_RAW_OBJECT_REUSE"
+        },
+        {
+          "analysis_level": "GENE",
+          "left_specification": "GSE68183_ACCESSION",
+          "right_specification": "GSE80178_ALIAS_CONTROL_SUBSET",
+          "matched_objects": "18865",
+          "spearman_logFC": "1",
+          "sign_concordance": "1",
+          "maximum_absolute_logFC_difference": "0",
+          "top_n": "500",
+          "top_overlap": "500",
+          "top_jaccard": "1",
+          "left_BH_FDR_lt_0_05": "0",
+          "right_BH_FDR_lt_0_05": "0",
+          "significant_overlap": "0",
+          "maximum_absolute_expression_difference": "0",
+          "naive_independent_study_count": "2",
+          "provenance_aware_independent_study_count": "1",
+          "naive_accession_rows": "12",
+          "provenance_aware_unique_objects": "6",
+          "independent_replication_eligible": "FALSE",
+          "evidence_role": "PSEUDO_REPLICATION_FROM_EXACT_RAW_OBJECT_REUSE"
+        }
+      ],
+      "expected": "<= 1e-12"
+    },
+    {
+      "check_id": "DOD_PSEUDOREPLICATION_BOUNDARY",
+      "pass": true,
+      "observed": [
+        {
+          "analysis_level": "FEATURE",
+          "left_specification": "GSE68183_ACCESSION",
+          "right_specification": "GSE80178_ALIAS_CONTROL_SUBSET",
+          "matched_objects": "33297",
+          "spearman_logFC": "1",
+          "sign_concordance": "1",
+          "maximum_absolute_logFC_difference": "0",
+          "top_n": "500",
+          "top_overlap": "500",
+          "top_jaccard": "1",
+          "left_BH_FDR_lt_0_05": "0",
+          "right_BH_FDR_lt_0_05": "0",
+          "significant_overlap": "0",
+          "maximum_absolute_expression_difference": "0",
+          "naive_independent_study_count": "2",
+          "provenance_aware_independent_study_count": "1",
+          "naive_accession_rows": "12",
+          "provenance_aware_unique_objects": "6",
+          "independent_replication_eligible": "FALSE",
+          "evidence_role": "PSEUDO_REPLICATION_FROM_EXACT_RAW_OBJECT_REUSE"
+        },
+        {
+          "analysis_level": "GENE",
+          "left_specification": "GSE68183_ACCESSION",
+          "right_specification": "GSE80178_ALIAS_CONTROL_SUBSET",
+          "matched_objects": "18865",
+          "spearman_logFC": "1",
+          "sign_concordance": "1",
+          "maximum_absolute_logFC_difference": "0",
+          "top_n": "500",
+          "top_overlap": "500",
+          "top_jaccard": "1",
+          "left_BH_FDR_lt_0_05": "0",
+          "right_BH_FDR_lt_0_05": "0",
+          "significant_overlap": "0",
+          "maximum_absolute_expression_difference": "0",
+          "naive_independent_study_count": "2",
+          "provenance_aware_independent_study_count": "1",
+          "naive_accession_rows": "12",
+          "provenance_aware_unique_objects": "6",
+          "independent_replication_eligible": "FALSE",
+          "evidence_role": "PSEUDO_REPLICATION_FROM_EXACT_RAW_OBJECT_REUSE"
+        }
+      ],
+      "expected": "2->1 studies; 12->6 objects; ineligible"
+    },
+    {
+      "check_id": "DOD_COMPARATOR_AXIS",
+      "pass": true,
+      "observed": 8,
+      "expected": "8 exact rows"
+    },
+    {
+      "check_id": "DOD_MULTIPLICITY",
+      "pass": true,
+      "observed": {
+        "effect_correlation": "Spearman correlation of matched logFC",
+        "sign_concordance": "Fraction of matched nonzero effects with identical sign",
+        "top_rank_n": 500,
+        "rank_statistic": "descending absolute moderated t then stable identifier",
+        "top_rank_overlap": "intersection count and Jaccard index",
+        "significance_threshold": 0.05,
+        "significance_field": "adj.P.Val",
+        "significance_overlap": "intersection count at BH FDR < 0.05",
+        "alias_numerical_equivalence_absolute_tolerance": 1e-12,
+        "run_equivalence_absolute_tolerance": 1e-12
+      },
+      "expected": "BH 0.05 descriptive; no new FC filter"
+    },
+    {
+      "check_id": "DOD_PRIMARY_PROFILE",
+      "pass": true,
+      "observed": [
+        "ALL12_PRIMARY",
+        "N11_EXCLUDE_GSM2114233_SENSITIVITY"
+      ],
+      "expected": "all12 primary; n11 sensitivity"
+    },
+    {
+      "check_id": "DOD_M05_FIREWALL",
+      "pass": true,
+      "observed": false,
+      "expected": false
+    },
+    {
+      "check_id": "DOD_DATASET_BOUNDARIES",
+      "pass": true,
+      "observed": {
+        "gse68183_role": "PROVENANCE_ALIAS_SOURCE_ONLY; not independent DFU validation",
+        "gse199939_role": "EXCLUDED_FROM_CORE",
+        "gse165816_role": "DEFERRED_TO_VALUE_ADD_M07_PARTICIPANT_AWARE_ANALYSIS",
+        "leave_one_study_out": "NOT_ESTIMABLE_WITH_ONE_INDEPENDENT_CORE_LOCAL_DFU_STUDY",
+        "all12_vs_n11": "ALL12 primary; n11 sensitivity only",
+        "valid_null": "No robust or independently replicated gene is an acceptable result"
+      },
+      "expected": "GSE199939 excluded; GSE165816 deferred M07"
+    },
+    {
+      "check_id": "DOD_VALID_NULL",
+      "pass": true,
+      "observed": "ACCEPTED_LOCKED_VALID_NULL_WITH_PROVENANCE_LIMITATIONS",
+      "expected": "accepted valid null"
+    },
+    {
+      "check_id": "DOD_NO_MUTATION",
+      "pass": true,
+      "observed": [
+        {
+          "check_id": "INPUT_HASHES",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "ALIAS_PAIR_COUNT",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "DECOMPRESSED_IDENTITY_AUTHORITY",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "CONTROL_GROUP_COUNTS",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "FEATURE_RANGE",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "GENE_RANGE",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "ALIAS_NUMERICAL_EQUIVALENCE",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "INDEPENDENT_REPLICATION_INELIGIBLE",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "M03_PRIMARY_AUTHORITY",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "M05_SIGNAL_SELECTION_FIREWALL",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "GSE199939_EXCLUDED",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        },
+        {
+          "check_id": "GSE165816_DEFERRED",
+          "pass": "TRUE",
+          "hard_gate": "TRUE"
+        }
+      ],
+      "expected": "12/12 and no mutation/install"
+    },
+    {
+      "check_id": "DOD_VALIDATION",
+      "pass": true,
+      "observed": 32,
+      "expected": 32
+    },
+    {
+      "check_id": "DOD_EQUIVALENCE",
+      "pass": true,
+      "observed": 20,
+      "expected": 20
+    },
+    {
+      "check_id": "DOD_ARCHIVE",
+      "pass": true,
+      "observed": {
+        "pre": "PASS_WITH_DECLARED_GAPS",
+        "post": "PASS",
+        "gaps": 0
+      },
+      "expected": "pre-run expected gap; post-run PASS zero gap"
+    },
+    {
+      "check_id": "DOD_ACCEPTANCE",
+      "pass": true,
+      "observed": {
+        "objects": 24,
+        "files": 27
+      },
+      "expected": "24 byte-identical objects and all read-only"
+    },
+    {
+      "check_id": "DOD_STATE",
+      "pass": true,
+      "observed": {
+        "resume": "RESUME_OK",
+        "module": "COMPLETED_VALID_NULL_WITH_PROVENANCE_LIMITATIONS_REPRODUCIBILITY_FULL",
+        "REQ006": "M04_COMPLETE_VALID_NULL_REPRODUCIBILITY_FULL"
+      },
+      "expected": "RESUME_OK and registries complete"
+    }
+  ],
+  "accepted_result_lock_sha256": "90fff5a7ae328611294acfc9062730875fb749bcfb74a97f73d022ace5a8cebe",
+  "post_run_archive_lock_sha256": "4707765fa4ba574eac5f99b607a9ec7eae14bb804d827ddf80cda559b193890f",
+  "sq9_resume_verdict": "RESUME_OK",
+  "expression_recomputed": false,
+  "source_files_modified": false
+}

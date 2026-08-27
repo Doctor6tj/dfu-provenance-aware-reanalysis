@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-26T04:27:02Z",
+  "status": "PASS",
+  "candidate_status": "VISUAL_CANDIDATE_NOT_SUBMISSION_LOCKED",
+  "frozen_facts_checked": {
+    "FACT_M02_INTERFACE": "127 accessions to 94 analytic participant units",
+    "FACT_M05_STUDIES": "1",
+    "FACT_M05_ROBUST_GENES": "0/18,865",
+    "FACT_M05_PATHWAY": "Not estimable",
+    "FACT_M07_INPUT": "14 libraries; 11 participants; 7 healers; 4 nonhealers; 45,514 cells",
+    "FACT_M07_GLOBAL_NULL": "0 significant; minimum global FDR 0.308834036196974"
+  },
+  "frozen_dataset_roles_checked": {
+    "GSE68183": "PROVENANCE_ALIAS_SOURCE_ONLY",
+    "GSE80178": "CORE_PRIMARY_WITHIN_STUDY",
+    "GSE134431": "DEFERRED_VALUE_ADD_M06",
+    "GSE143735": "SYSTEMIC_CONTEXT_ONLY",
+    "GSE199939": "BACKGROUND_OR_SEPARATELY_LABELLED_SENSITIVITY",
+    "GSE165816": "PARTICIPANT_AWARE_VALUE_ADD"
+  },
+  "output_png": "07_manuscript/figures/Figure1_workflow/deliveries/v02_visual_candidate_20260826_attempt03/Figure1_visual_v02.png",
+  "output_svg": null,
+  "submission_ready": false,
+  "next_gate": "ACTUAL_RENDER_VISUAL_QC_THEN_USER_VISUAL_LOCK"
+}

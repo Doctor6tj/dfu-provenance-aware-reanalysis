@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M04_NAIVE_VS_AWARE_SENSITIVITY",
+  "parameter_version": "v1",
+  "scope": "Prespecified quantification of apparent reproducibility under cross-accession sample reuse and biologically merged comparators",
+  "input_authority": {
+    "gse68183_raw_tar": {
+      "path": "03_data/raw_external_READ_ONLY/GSE68183/GSE68183_RAW.tar",
+      "sha256": "70590e9a14dd5295906778116a374379a5afc9df71ffa16fc5fff692a0fdaaa3"
+    },
+    "gse80178_raw_tar": {
+      "path": "03_data/raw_external_READ_ONLY/GSE80178/GSE80178_RAW.tar",
+      "sha256": "ac9ee8103a261353fd3aff5dd278970f2aa1a0687f58b83c63eb7cc88349abe2"
+    },
+    "gse68183_manifest": {
+      "path": "04_code/configs/M04_GSE68183_control_alias_manifest_v1.csv",
+      "sha256": "978755356cae7976e0633fd2cfab093d894763fda2ef6aefcfeba236fbab3b6f"
+    },
+    "gse80178_alias_manifest": {
+      "path": "04_code/configs/M04_GSE80178_alias_control_manifest_v1.csv",
+      "sha256": "c5aa974b10e47e8b5347a169d1f7dad8c686e895066466a835ab77092ea5dd2f"
+    },
+    "sensitivity_axes": {
+      "path": "04_code/configs/M04_sensitivity_axes_v1.csv",
+      "sha256": "96b89b431a93ddb6b9db8fdd9ce7352484ecdff25fe557f3cfda0bca533e9bcf"
+    },
+    "m01_pair_adjudication": {
+      "path": "06_locked_results/modules/M01_PROVENANCE_AUDIT/v1_metadata_adjudication/gse68183_gse80178_pair_adjudication.csv",
+      "sha256": "e524aef988e73591d526246ccd50fe2cfcf214628b8d6e0162a68891386dc038"
+    },
+    "m01_metadata_result_lock": {
+      "path": "06_locked_results/modules/M01_PROVENANCE_AUDIT/v1_metadata_adjudication/M01_METADATA_RESULT_LOCK_v1.json",
+      "sha256": "0f7a4fd1fd7c6ada153123bf5c0a4c6e470cd299537dd8968335ed9a6fdfe9d5"
+    },
+    "m02_comparator_matrix": {
+      "path": "06_locked_results/modules/M02_COHORT_HARMONIZATION/v1/M02_comparator_compatibility_matrix.csv",
+      "sha256": "6dab6ff30992d86f6a6cb80039a063a84c92f77c6ec8c670e44df5c824f00b6b"
+    },
+    "m02_result_lock": {
+      "path": "06_locked_results/modules/M02_COHORT_HARMONIZATION/v1/M02_RESULT_LOCK_v1.json",
+      "sha256": "121a4d3f2c39cf705518544ca97087938f4118d67aaf7b40f460b79001844063"
+    },
+    "m03_accepted_result_lock": {
+      "path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/M03_RESULT_LOCK_v1.json",
+      "sha256": "4c73b8082bd7e38f5e65b71d661b6de04122d1507fb098eaab64305880822dfa"
+    },
+    "m03_accepted_object_manifest": {
+      "path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/M03_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+      "sha256": "fcd4bc2404fa4fb5870135865bb8bcbaa81ae534b2bacf2861247ec818d1fee4"
+    },
+    "m03_final_dod": {
+      "path": "08_qc/M03_V3_FINAL_DOD_AND_STATE_QC_20260825.json",
+      "sha256": "6751e3775391e206e67c6a7a0f01e896c798e96fbca99a66c73b9dbae8c5a023"
+    },
+    "m03_feature_annotation_mapping": {
+      "path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1/primary_all12/M03_feature_annotation_mapping.tsv.gz",
+      "sha256": "39fde060c75e424df877b631fe2131ba392a5074b8cf734316f44d4f1bd673e2"
+    },
+    "r_environment_manifest": {
+      "path": "04_code/environments/M03_R_v1/environment_manifest.txt",
+      "sha256": "2c12333d606a3310868d9a24ab08993af28200b97e3478a80cae74c7b7cc4206"
+    },
+    "local_method_api_snapshot": {
+      "path": "04_code/environments/M03_R_v1/method_api_snapshot_v1.txt",
+      "sha256": "f509be39242ac67d6891b1ba479549498a836fefb773604dc3fcf379b0815716"
+    }
+  },
+  "upstream_locks": [
+    "L2_DATASET_ROLES_INDEPENDENCE_v1",
+    "L3_ANALYSIS_STATISTICAL_PLAN_v1",
+    "L5B_M01_DATASET_RELATIONSHIP_v1",
+    "L5E_M02_COHORT_HARMONIZATION_v1",
+    "L5I_M03_ACCEPTED_RESULT_v1",
+    "L5J_M03_FINAL_DOD_v1"
+  ],
+  "software": {
+    "R": "4.5.3",
+    "oligo": "1.74.0",
+    "pd.hugene.1.0.st.v1": "3.14.1",
+    "limma": "3.66.0",
+    "Biobase": "2.70.0",
+    "jsonlite": "2.0.0",
+    "digest": "0.6.39",
+    "package_installation_allowed": false
+  },
+  "reuse_axis": {
+    "platform": "GPL16686",
+    "array_design": "Affymetrix Human Gene 1.0 ST Array",
+    "profiles": ["GSE68183_CONTROL_ONLY", "GSE80178_ALIAS_CONTROL_ONLY"],
+    "samples_per_profile": 6,
+    "group_counts": {"DFS": 3, "NFS": 3},
+    "contrast": {"contrast_id": "DFS_vs_NFS", "formula": "DFS-NFS", "role": "CONTEXTUAL_PSEUDO_REPLICATION_DEMONSTRATION"},
+    "naive_independent_study_count": 2,
+    "provenance_aware_independent_study_count": 1,
+    "naive_accession_rows": 12,
+    "provenance_aware_unique_sample_objects": 6,
+    "independent_replication_eligible": false,
+    "reason": "All six GSE68183 decompressed CEL objects are exact aliases of the six GSE80178 DFS/NFS controls",
+    "interpretation": "Concordance between the two accession containers is pseudo-replication and cannot support external validation"
+  },
+  "preprocessing": {
+    "reader": "oligo::read.celfiles",
+    "reader_pkgname": "pd.hugene.1.0.st.v1",
+    "method": "oligo::rma",
+    "background": true,
+    "normalize": true,
+    "summarization": "median-polish",
+    "target": "core",
+    "expression_scale": "log2",
+    "process_each_accession_container_separately": true,
+    "direct_cross_dataset_raw_pooling": false,
+    "annotation_authority": "Reuse the locked M03 feature-to-ENTREZ mapping without reannotation",
+    "gene_aggregation": "Median log2 expression across features with exactly one nonmissing ENTREZID"
+  },
+  "reuse_model": {
+    "engine": "limma",
+    "design": "~0 + factor(group_code, levels=c('DFS','NFS'))",
+    "contrast": "DFS-NFS",
+    "covariates": [],
+    "blocking": "NONE within each six-object accession profile; cross-accession independence is evaluated from the locked alias map rather than modeled as independent",
+    "empirical_bayes": {"trend": false, "robust": true, "winsor_tail_p": [0.05, 0.10]},
+    "multiplicity_method": "Benjamini-Hochberg within feature or gene profile",
+    "fdr_threshold_for_descriptive_counts": 0.05
+  },
+  "comparator_axis": {
+    "source_root": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1",
+    "profiles": {
+      "ALL12_PRIMARY": "primary_all12",
+      "N11_EXCLUDE_GSM2114233_SENSITIVITY": "sensitivity_n11_exclude_GSM2114233"
+    },
+    "analysis_levels": ["FEATURE", "GENE"],
+    "naive_contrast": "DFU_vs_FS_NAIVE",
+    "provenance_aware_contrasts": ["DFU_vs_DFS", "DFU_vs_NFS"],
+    "primary_profile_authority": "ALL12_PRIMARY",
+    "n11_role": "QC_SENSITIVITY_ONLY",
+    "gene_robustness_selection_performed": false,
+    "reason": "M04 quantifies specification sensitivity; M05 owns robust-signal eligibility"
+  },
+  "metrics": {
+    "effect_correlation": "Spearman correlation of matched logFC",
+    "sign_concordance": "Fraction of matched nonzero effects with identical sign",
+    "top_rank_n": 500,
+    "rank_statistic": "descending absolute moderated t then stable identifier",
+    "top_rank_overlap": "intersection count and Jaccard index",
+    "significance_threshold": 0.05,
+    "significance_field": "adj.P.Val",
+    "significance_overlap": "intersection count at BH FDR < 0.05",
+    "alias_numerical_equivalence_absolute_tolerance": 1e-12,
+    "run_equivalence_absolute_tolerance": 1e-12
+  },
+  "prespecified_boundaries": {
+    "gse68183_role": "PROVENANCE_ALIAS_SOURCE_ONLY; not independent DFU validation",
+    "gse199939_role": "EXCLUDED_FROM_CORE",
+    "gse165816_role": "DEFERRED_TO_VALUE_ADD_M07_PARTICIPANT_AWARE_ANALYSIS",
+    "leave_one_study_out": "NOT_ESTIMABLE_WITH_ONE_INDEPENDENT_CORE_LOCAL_DFU_STUDY",
+    "all12_vs_n11": "ALL12 primary; n11 sensitivity only",
+    "valid_null": "No robust or independently replicated gene is an acceptable result"
+  },
+  "execution_control": {
+    "foreground_only": true,
+    "background_allowed": false,
+    "output_overwrite_allowed": false,
+    "unique_run_directory_required": true,
+    "randomness": "NONE",
+    "expected_runtime_minutes": 30,
+    "hard_timeout_minutes": 180,
+    "source_modification_allowed": false,
+    "intermediate_hash_policy": "Verify trust-boundary inputs once; hash final deliverables once; do not repeatedly hash intermediates"
+  },
+  "forbidden_operations": [
+    "count GSE68183 as independent replication",
+    "present DFS/NFS pooling as a primary comparator",
+    "select the more favorable all12 or n11 profile",
+    "claim sensitivity-only genes as robust",
+    "include GSE199939 in core",
+    "use GSE165816 libraries or cells as independent M04 units",
+    "directly pool raw expression across accession containers",
+    "install packages during execution",
+    "overwrite any source prior run archive or accepted result"
+  ],
+  "unknown_historical_defaults": [],
+  "declared_tolerance": "Exact identities counts directions roles and hashes; numerical tolerance 1e-12 for deterministic effect and equivalence objects"
+}

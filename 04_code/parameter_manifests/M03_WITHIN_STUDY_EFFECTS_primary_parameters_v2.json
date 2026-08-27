@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M03_WITHIN_STUDY_EFFECTS",
+  "parameter_version": "v2_primary_all12",
+  "scope": "Author-approved all-12 GSE80178 participant-aware primary raw-CEL reconstruction and within-study effects",
+  "input_authority": {
+    "raw_tar": {
+      "path": "03_data/raw_external_READ_ONLY/GSE80178/GSE80178_RAW.tar",
+      "sha256": "ac9ee8103a261353fd3aff5dd278970f2aa1a0687f58b83c63eb7cc88349abe2"
+    },
+    "sample_manifest": {
+      "path": "04_code/configs/M03_GSE80178_sample_manifest_v1.csv",
+      "sha256": "b5324af48728c0ae5650f7669c4d00b5332dda2440663dc67db81b73eca9274a"
+    },
+    "primary_sample_manifest": {
+      "path": "04_code/configs/M03_GSE80178_sample_manifest_v1.csv",
+      "sha256": "b5324af48728c0ae5650f7669c4d00b5332dda2440663dc67db81b73eca9274a"
+    },
+    "m02_accession_manifest": {
+      "path": "06_locked_results/modules/M02_COHORT_HARMONIZATION/v1/M02_accession_level_manifest.csv",
+      "sha256": "b5f696562cea8d46854eedffa36e4241ee02d391cfc02b7cd49cc8abc1c39027"
+    },
+    "m02_result_lock": {
+      "path": "06_locked_results/modules/M02_COHORT_HARMONIZATION/v1/M02_RESULT_LOCK_v1.json",
+      "sha256": "121a4d3f2c39cf705518544ca97087938f4118d67aaf7b40f460b79001844063"
+    },
+    "r_environment_manifest": {
+      "path": "04_code/environments/M03_R_v1/environment_manifest.txt",
+      "sha256": "2c12333d606a3310868d9a24ab08993af28200b97e3478a80cae74c7b7cc4206"
+    },
+    "local_method_api_snapshot": {
+      "path": "04_code/environments/M03_R_v1/method_api_snapshot_v1.txt",
+      "sha256": "f509be39242ac67d6891b1ba479549498a836fefb773604dc3fcf379b0815716"
+    },
+    "author_qc_route_decision": {
+      "path": "02_protocol_and_design/locks/M03_QC_ROUTE_AUTHOR_DECISION_20260825.json",
+      "sha256": "b8773ed61ad63ceed11c7afad060c2bf73e5467becc4b4880e0898c832312e20"
+    }
+  },
+  "author_decision": {
+    "lock_id": "L3B_M03_QC_ROUTE_AUTHOR_DECISION_v1",
+    "route": "ALL12_PRIMARY_PLUS_SEPARATE_N11_GSM2114233_EXCLUSION_SENSITIVITY"
+  },
+  "dataset": {
+    "accession": "GSE80178",
+    "platform": "GPL16686",
+    "array_design": "Affymetrix Human Gene 1.0 ST Array",
+    "analysis_profile": "ALL12_PRIMARY",
+    "analysis_role": "CORE_PRIMARY",
+    "primary_sample_universe_expected": 12,
+    "expected_samples": 12,
+    "expected_group_counts": {
+      "DFU": 6,
+      "DFS": 3,
+      "NFS": 3
+    },
+    "excluded_gsm_accessions": [],
+    "independence_unit": "one source-reported specimen/participant unit per GSE80178 accession",
+    "gse68183_rule": "accession-alias provenance only; never read as independent M03 expression input"
+  },
+  "software": {
+    "R": "4.5.3",
+    "oligo": "1.74.0",
+    "pd.hugene.1.0.st.v1": "3.14.1",
+    "hugene10sttranscriptcluster.db": "8.8.0",
+    "limma": "3.66.0",
+    "Biobase": "2.70.0",
+    "AnnotationDbi": "1.72.0",
+    "jsonlite": "2.0.0",
+    "digest": "0.6.39",
+    "package_installation_allowed": false
+  },
+  "preprocessing": {
+    "reader": "oligo::read.celfiles",
+    "reader_pkgname": "pd.hugene.1.0.st.v1",
+    "use_cel_members_only": true,
+    "ignore_chp_members": true,
+    "method": "oligo::rma",
+    "background": true,
+    "normalize": true,
+    "summarization": "median-polish",
+    "target": "core",
+    "expression_scale": "log2",
+    "expression_based_prefilter": "NONE",
+    "control_probe_policy": "RMA core transcript-cluster target defines retained features"
+  },
+  "annotation": {
+    "database": "hugene10sttranscriptcluster.db",
+    "keytype": "PROBEID",
+    "columns": ["SYMBOL", "ENTREZID", "GENENAME"],
+    "primary_gene_identifier": "ENTREZID",
+    "ambiguous_feature_policy": "Retain in feature-level tables but exclude from gene aggregation unless exactly one nonmissing ENTREZID is mapped",
+    "multiple_features_per_gene_policy": "Median normalized log2 expression across unambiguously mapped core transcript clusters before gene-level modeling",
+    "missing_annotation_policy": "Retain feature-level result with missing gene fields; exclude from gene-level aggregation"
+  },
+  "model": {
+    "engine": "limma",
+    "design": "~0 + factor(group_code, levels=c('DFU','DFS','NFS'))",
+    "covariates": [],
+    "covariate_rationale": "No source-verified participant covariates or batch variables are available for a stable 12-array model",
+    "blocking": "NONE; each retained GSE80178 participant unit contributes one array",
+    "empirical_bayes": {
+      "trend": false,
+      "robust": true,
+      "winsor_tail_p": [0.05, 0.10]
+    },
+    "contrasts": [
+      {
+        "contrast_id": "DFU_vs_DFS",
+        "formula": "DFU-DFS",
+        "role": "PRIMARY",
+        "interpretation": "ulcerated diabetic foot tissue versus nonulcerated diabetic foot skin"
+      },
+      {
+        "contrast_id": "DFU_vs_NFS",
+        "formula": "DFU-NFS",
+        "role": "PRIMARY",
+        "interpretation": "ulcerated diabetic foot tissue versus healthy nondiabetic foot skin"
+      },
+      {
+        "contrast_id": "DFU_vs_FS_NAIVE",
+        "formula": "DFU-(DFS+NFS)/2",
+        "role": "PRESPECIFIED_NAIVE_COMPARATOR_SENSITIVITY",
+        "interpretation": "illustrates distortion from merging biologically distinct control classes; never substitutes for either primary contrast"
+      },
+      {
+        "contrast_id": "DFS_vs_NFS",
+        "formula": "DFS-NFS",
+        "role": "CONTEXT_DIAGNOSTIC",
+        "interpretation": "diabetes-associated difference in nonulcerated foot skin"
+      }
+    ]
+  },
+  "multiplicity": {
+    "method": "Benjamini-Hochberg",
+    "family": "all tested features or genes within each declared contrast",
+    "fdr_threshold_for_descriptive_counts": 0.05,
+    "fold_change_threshold_for_primary_inference": "NONE",
+    "primary_outputs": "complete effect-size, standard-error, moderated-statistic, raw-P, and adjusted-P tables"
+  },
+  "quality_control": {
+    "hard_checks": {
+      "input_hashes_match": true,
+      "sample_count_exact": 12,
+      "gsm_and_cel_member_sets_exact": true,
+      "group_counts_exact": {"DFU": 6, "DFS": 3, "NFS": 3},
+      "normalized_nonfinite_values": 0,
+      "design_rank": 3,
+      "minimum_core_feature_count": 20000,
+      "maximum_core_feature_count": 50000
+    },
+    "review_flags": {
+      "minimum_offdiagonal_pearson_correlation": 0.80,
+      "maximum_absolute_sample_RLE_median": 0.20,
+      "maximum_sample_RLE_IQR": 0.50,
+      "minimum_unambiguous_entrez_mapping_fraction": 0.60
+    },
+    "review_flag_actions": {
+      "LOW_PAIRWISE_CORRELATION": "DIAGNOSTIC_ONLY",
+      "RLE_MEDIAN_SHIFT": "SAMPLE_QC_LIMITATION_IF_FLAGGED",
+      "RLE_IQR_WIDE": "SAMPLE_QC_LIMITATION_IF_FLAGGED",
+      "LOW_ENTREZ_MAPPING": "DIAGNOSTIC_ONLY"
+    },
+    "outlier_policy": "Retain all 12 arrays in the primary analysis. No automatic exclusion. Flagged sample-level RLE evidence is an explicit limitation; global minimum correlation and annotation yield are diagnostics, not automatic rejection.",
+    "pca_features": 1000,
+    "pca_scaling": false
+  },
+  "execution_control": {
+    "foreground_only": true,
+    "background_allowed": false,
+    "output_overwrite_allowed": false,
+    "unique_run_directory_required": true,
+    "randomness": "NONE",
+    "expected_runtime_minutes": 30,
+    "hard_timeout_minutes": 180,
+    "source_modification_allowed": false,
+    "intermediate_hash_policy": "No repeated hashing; verify inputs once and hash final deliverable outputs once"
+  },
+  "forbidden_operations": [
+    "read GSE68183 CEL files as independent evidence",
+    "pool DFS and NFS as the primary comparator",
+    "include GSE199939 in the core analysis",
+    "directly pool raw expression across datasets or platforms",
+    "unapproved sample exclusion outside the separately locked GSM2114233 sensitivity profile",
+    "unplanned covariate or model change",
+    "package installation during execution",
+    "overwrite any source, prior run, or accepted result"
+  ],
+  "unknown_historical_defaults": [],
+  "declared_tolerance": "Exact hashes, accessions, CEL members, group counts, model formulas, package major/minor versions, and zero source modifications"
+}

@@ -1,0 +1,6 @@
+﻿source_id,path,role,status,notes
+F1S001,07_manuscript\control_manifests\G7_MANUSCRIPT_CONTROL_v1_20260826\result_fact_ledger.csv,Accepted numerical and estimability facts,READ_ONLY_ACCEPTED,127 to 94; one compatible core study; supporting single-cell input and global null
+F1S002,07_manuscript\control_manifests\G7_MANUSCRIPT_CONTROL_v1_20260826\dataset_role_transform_manifest.csv,Six-series role and boundary registry,READ_ONLY_ACCEPTED,"Core, provenance-alias, supporting, deferred, context-only, and background roles"
+F1S003,07_manuscript\control_manifests\G7_MANUSCRIPT_CONTROL_v1_20260826\claim_evidence_map.csv,Claim hierarchy and prohibited extensions,READ_ONLY_ACCEPTED,"Primary, supporting, and limitation claims"
+F1S004,04_code/Python/build_figure1.py,Deterministic project-specific Figure 1 generator,VERSIONED_SCRIPT,Validates frozen inputs; writes spec; renders PNG-only review candidate
+F1S005,04_code/vendor/figure_skills/sq5_v4.3/tools,Pinned SQ5 rendering and QC utilities,PINNED_VENDOR,"Layout, visual-grammar, rendered-output, and hotspot checks"

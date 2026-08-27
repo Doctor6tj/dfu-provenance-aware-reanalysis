@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M07_SINGLE_CELL_CONTEXT",
+  "environment_role": "FULL_CORE_PARTICIPANT_LEVEL",
+  "status": "NO_INSTALL_REQUIRED",
+  "required_missing": [],
+  "install_inside_analysis_script": false,
+  "background_installation": false,
+  "source_data_access_during_install": false,
+  "installation_performed_by_this_capture": false
+}

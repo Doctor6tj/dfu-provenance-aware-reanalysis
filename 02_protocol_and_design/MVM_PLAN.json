@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "DFU_PRR_2026",
+  "approval_status": "L1_L3_AUTHOR_APPROVED_v1",
+  "central_claim": "Provenance-aware classification of sample reuse, comparator biology, and participant independence materially changes the apparent reproducibility of public DFU transcriptomic evidence; only signals that survive prespecified study-aware sensitivity analyses are eligible as robust.",
+  "null_safe_claim": "If no biological signal survives, the validated provenance and comparator audit remains the core result.",
+  "core_modules": [
+    "M01_PROVENANCE_AUDIT",
+    "M02_COHORT_HARMONIZATION",
+    "M03_WITHIN_STUDY_EFFECTS",
+    "M04_NAIVE_VS_AWARE_SENSITIVITY",
+    "M05_ROBUSTNESS_SYNTHESIS"
+  ],
+  "value_add_modules": [
+    "M06_HEALING_OUTCOME_CONTEXT",
+    "M07_SINGLE_CELL_CONTEXT"
+  ],
+  "optional_modules": [
+    "M08_LONGITUDINAL_CONTEXT"
+  ],
+  "minimum_release_objects": [
+    "Table1_Cohort_Provenance",
+    "Figure1_Study_Design",
+    "Figure2_Sample_Reuse_Comparator_Map",
+    "Figure3_Naive_Vs_Aware_Concordance",
+    "Figure4_Robustness_Synthesis",
+    "Supplementary_Methods",
+    "Supplementary_Provenance_Tables",
+    "Main_Manuscript"
+  ],
+  "stop_loss": "If compatible independent evidence is insufficient for biological synthesis, close M05 with a valid cannot-conclude boundary and release a provenance/comparator-focused MVM.",
+  "rule": "Value-add and optional modules must not delay or invalidate the MVM unless the author explicitly changes L1-L3."
+}

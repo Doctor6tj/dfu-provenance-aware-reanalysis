@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L5N_M04_ACCEPTED_RESULT_v1",
+  "module_id": "M04_NAIVE_VS_AWARE_SENSITIVITY",
+  "status": "ACCEPTED_LOCKED_VALID_NULL_WITH_PROVENANCE_LIMITATIONS",
+  "locked_at": "2026-08-25T14:18:39.653101+00:00",
+  "source_candidate": "05_analysis_steps\\M04_NAIVE_VS_AWARE_SENSITIVITY\\runs\\M04_NAIVE_VS_AWARE_V1R1_20260825T140000Z",
+  "failed_v1_candidate_reused": false,
+  "post_run_archive_lock": {
+    "path": "06_locked_results\\reproducibility_archives\\M04_NAIVE_VS_AWARE_SENSITIVITY_POST_RUN_v1\\00_archive_control\\archive_lock.json",
+    "sha256": "4707765fa4ba574eac5f99b607a9ec7eae14bb804d827ddf80cda559b193890f",
+    "status": "POST_RUN_LOCKED_PASS_ZERO_GAPS"
+  },
+  "accepted_object_manifest": {
+    "path": "06_locked_results\\modules\\M04_NAIVE_VS_AWARE_SENSITIVITY\\v1\\M04_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+    "sha256": "0bf5a95636165e327c7a4e8f24c4429fef911e1f652fe075c544190045f146a3",
+    "objects": 24
+  },
+  "acceptance_qc": {
+    "path": "06_locked_results\\modules\\M04_NAIVE_VS_AWARE_SENSITIVITY\\v1\\M04_ACCEPTANCE_QC_v1.json",
+    "sha256": "ce5497c2ad2831ae98b647dcfba22ce3f2331c986c92ec36597f5de7c2f7938b",
+    "verdict": "PASS_BYTE_IDENTICAL_PROMOTION"
+  },
+  "validation": {
+    "path": "accepted_candidate/M04_POST_RUN_VALIDATION.json",
+    "sha256": "eb0561337a16db35ab0536f378cf8894ba959b93b8f49a786b2abee2be8799d4",
+    "checks": "32/32"
+  },
+  "equivalence": {
+    "path": "reproducibility/M04_EQUIVALENCE_SUMMARY.json",
+    "sha256": "3ce567a5b2fd13f81a770fffdfd65cbf45c8e6d4e517961f8f1f44ecf22e54dc",
+    "checks": "20/20"
+  },
+  "primary_authority": "ALL12_PRIMARY_M03_EFFECTS; M04_SPECIFICATION_SENSITIVITY_ONLY",
+  "key_results": {
+    "exact_alias_pairs": 6,
+    "naive_accession_rows": 12,
+    "provenance_aware_unique_objects": 6,
+    "naive_independent_study_count": 2,
+    "provenance_aware_independent_study_count": 1,
+    "alias_expression_and_effect_max_abs_delta": 0,
+    "independent_replication_eligible": false,
+    "all12_naive_gene_BH_FDR_lt_0_05": 0,
+    "all12_both_separate_gene_BH_FDR_lt_0_05": 0,
+    "n11_naive_gene_BH_FDR_lt_0_05": 9,
+    "n11_both_separate_gene_BH_FDR_lt_0_05": 0
+  },
+  "interpretation": "Naive accession counting creates pseudo-replication from six exact reused controls, and pooled-control effects cannot replace separate DFS and NFS comparisons.",
+  "cannot_conclude": [
+    "GSE68183 is not independent replication evidence for GSE80178",
+    "Pooled DFS/NFS findings are not eligible as primary comparator findings",
+    "M04 does not select robust genes; M05 owns that decision",
+    "Independent leave-one-study-out replication is not estimable with one core local-DFU study"
+  ],
+  "M05_firewall": "M04 does not select robust genes; M05 adjudicates any robust signal using accepted M03/M04 boundaries.",
+  "frozen_do_not_modify": [
+    "accepted_candidate",
+    "reproducibility",
+    "M04_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+    "M04_ACCEPTANCE_QC_v1.json",
+    "this lock"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "check": "PUBLIC_SUPPLEMENTARY_TABLE_SCRIPT_VS_ACCEPTED_SUBMISSION_TABLES",
+  "status": "PASS",
+  "scientific_analysis_rerun": false,
+  "tables": {
+    "Supplementary_Table_S1_Exact_Sample_Reuse_v01.csv": {
+      "rows": 6,
+      "byte_identical": true
+    },
+    "Supplementary_Table_S2_Participant_Sample_Interface_v01.csv": {
+      "rows": 94,
+      "byte_identical": true
+    },
+    "Supplementary_Table_S3_Dataset_Roles_and_Comparability_v01.csv": {
+      "rows": 6,
+      "byte_identical": true
+    },
+    "Supplementary_Table_S4_Comparator_Compatibility_v01.csv": {
+      "rows": 7,
+      "byte_identical": true
+    }
+  },
+  "note": "The curated portable table script reproduced all four accepted submission-facing CSV files byte for byte."
+}

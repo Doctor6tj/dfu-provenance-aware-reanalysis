@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L5D_M01_AUTHOR_CLOSEOUT_v1",
+  "module_id": "M01_PROVENANCE_AUDIT",
+  "run_id": "M01_CLOSEOUT_20260825T075100Z",
+  "status": "COMPLETED_PASS_WITH_DECLARED_GAPS",
+  "author_decision": "Exclude GSE199939 from core DFU analysis; retain only as diabetic-foot-skin background or separately labelled sensitivity analysis.",
+  "author_decision_id": "DEC_GSE199939_CONTEXT_ONLY_AUTHOR_APPROVED_20260825",
+  "updated_object_sha256": {
+    "03_data/metadata/CANDIDATE_DATASET_REGISTRY.csv": "8964f7e747a5bddb22c171b2fd404a1dacb0134e914e967df22a473752c47ae9",
+    "02_protocol_and_design/MODULE_REGISTRY.csv": "8436f261d2028b23abb2b70335a4c43840c5afb5290fd00147158f221c3b1287",
+    "02_protocol_and_design/module_contracts/M01_PROVENANCE_AUDIT_v1.json": "175ec554850286680e83c33ce9b6242dfa7ab8ab868e6e753fc2328b28dd5c17",
+    "02_protocol_and_design/DEBT_REGISTER.csv": "293b680fd603762cc6b59fab626c272454fc0e19b1a4904812fc32ce0a2e9182",
+    "02_protocol_and_design/REQUIREMENTS_TRACEABILITY_MATRIX.csv": "99a3ecfc45b65a73959a9159b4401734faea8243d889f807fee6a289684ced7a",
+    "02_protocol_and_design/locks/M01_GSE199939_AUTHOR_DECISION_20260825.md": "e5acfdeea1827ba0f98a2993be775b82ff5c2a8422a9f1aeb4aa3afae99c2f09"
+  },
+  "upstream_locks": [
+    "L5_M01_PROVENANCE_PILOT_v1",
+    "L5B_M01_DATASET_RELATIONSHIP_v1",
+    "L5C_M01_REMAINING_DATASET_AUDIT_v1"
+  ],
+  "next_gate": "G3B_M02_CONTRACT_AND_INTERFACE_PRE_RUN",
+  "m02_execution_authorized": false,
+  "expression_analysis_performed": false,
+  "declared_gaps": [
+    "GSE134431 numeric label 31 cross-context linkage remains unproven and unmerged",
+    "Real participant IDs for reused GSE68183/GSE80178 controls are not public",
+    "GSE199939 ulcer status remains unverifiable at sample level and is context/sensitivity only"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M02_COHORT_HARMONIZATION",
+  "parameter_version": "v1",
+  "scope": "Participant/sample, comparator, tissue, and analysis-role interface construction only",
+  "expression_analysis_performed": false,
+  "input_sha256": {
+    "participant_sample_map_candidate": "7f06457e2e6a9d6ad002f4c0a5c1d6c59ccea84a68c33d16a2d64220a5e47e31",
+    "gse68183_gse80178_pair_adjudication": "e524aef988e73591d526246ccd50fe2cfcf214628b8d6e0162a68891386dc038",
+    "remaining_dataset_sample_registry": "9c49ece995c3c10c0e585bcd0b6e2dd8b5c63535bea4ffe4616293e575030541",
+    "gse165816_participant_sample_map": "3be4482555be15cd645bab2d0f632f0957cebb0d0dfbdd47c3d9e0fee30fda92",
+    "candidate_dataset_registry_after_m01_closeout": "8964f7e747a5bddb22c171b2fd404a1dacb0134e914e967df22a473752c47ae9",
+    "m01_closeout_result_lock": "77dd2ad2380204aee0b332a169b56905205766c9b4a0872ec1a3537b713f7bd0"
+  },
+  "expected_counts": {
+    "accession_rows": 127,
+    "unique_gsm_accessions": 127,
+    "analytic_participant_units": 94,
+    "dataset_accession_rows": {
+      "GSE68183": 6,
+      "GSE80178": 12,
+      "GSE134431": 21,
+      "GSE143735": 13,
+      "GSE199939": 21,
+      "GSE165816": 54
+    },
+    "shared_exact_alias_pairs": 6,
+    "gse80178_deduplicated_primary_rows": 12,
+    "gse165816_participants": 27,
+    "gse165816_libraries": 54,
+    "gse199939_core_eligible_rows": 0
+  },
+  "policies": {
+    "independence_unit": "participant within study; exact shared raw object for accession-alias collapse",
+    "shared_control_authority": "GSE80178 accession rows count once in the primary container; GSE68183 accession rows remain provenance aliases only",
+    "gse134431_numeric_31": "Do not merge without explicit public linkage",
+    "gse143735": "Systemic nonulcerated forearm context only",
+    "gse199939": "Excluded from core; background or separately labelled sensitivity only",
+    "gse165816": "Participant-aware and tissue-stratified; 54 libraries are not 54 independent participants",
+    "output_overwrite_allowed": false,
+    "randomness": "NONE"
+  },
+  "unknown_historical_defaults": [],
+  "declared_tolerance": "EXACT_COUNTS_STRINGS_AND_HASHES"
+}

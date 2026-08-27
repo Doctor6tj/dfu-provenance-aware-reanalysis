@@ -1,0 +1,11 @@
+panel,display_order,category,n_genes,status,figure_message
+A,1,ROBUST_CROSS_STUDY_COMPATIBLE,0,ROBUST,Primary robust signal
+A,2,PRIMARY_BOTH_SEPARATE_INTERNAL_ONLY,0,NOT_ROBUST,Within-study primary support only
+A,3,PRIMARY_SINGLE_SEPARATE_INTERNAL_ONLY,0,NOT_ROBUST,Comparator-specific within-study evidence only
+A,4,PRIMARY_NAIVE_MERGED_ONLY_NOT_ROBUST,0,NOT_ROBUST,Naive merged-comparator dependence
+A,5,SENSITIVITY_ONLY_SEPARATE_NOT_ROBUST,1,NOT_ROBUST,QC sensitivity only
+A,6,SENSITIVITY_ONLY_NAIVE_MERGED_NOT_ROBUST,8,NOT_ROBUST,Naive QC sensitivity only
+A,7,NO_THRESHOLD_SIGNAL,18856,NOT_ROBUST,No gene-level threshold signal
+B,1,Naive accession labels,2,PSEUDO_REPLICATION_RISK,Two accession labels do not represent two independent studies
+B,2,Independent compatible studies,1,BELOW_MINIMUM,At least two independent compatible studies were required
+B,3,Robust cross-study genes,0,VALID_NULL,INSUFFICIENT_INDEPENDENT_COMPATIBLE_EVIDENCE_NO_ROBUST_SIGNAL

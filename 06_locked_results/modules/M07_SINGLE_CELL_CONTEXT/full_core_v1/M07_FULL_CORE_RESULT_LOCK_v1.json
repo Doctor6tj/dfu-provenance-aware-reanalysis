@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M07_SINGLE_CELL_CONTEXT",
+  "lock_id": "L5_M07_FULL_CORE_POST_RUN_v1",
+  "locked_at_utc": "2026-08-25T18:44:15Z",
+  "status": "LOCKED_VALID_GLOBAL_NULL_SUPPORTING_EXPLORATORY",
+  "analysis_role": "SUPPORTING_EXPLORATORY_VALUE_ADD",
+  "scope": {
+    "dataset": "GSE165816",
+    "core_tissue": "FOOT_SKIN",
+    "libraries": 14,
+    "participants": 11,
+    "healer_participants": 7,
+    "nonhealer_participants": 4,
+    "cells_pre_qc": 45514,
+    "contrast": "DFU_NONHEALER_MINUS_DFU_HEALER",
+    "independence_unit": "participant_alias"
+  },
+  "locked_findings": {
+    "retained_singlets": 39238,
+    "retained_fraction": 0.8621,
+    "union_features": 22637,
+    "clusters": 26,
+    "assigned_clusters": 25,
+    "unresolved_clusters": 1,
+    "pseudobulk_columns": 171,
+    "raw_count_conservation": "351620642/351620642",
+    "eligible_cell_types": 8,
+    "tested_gene_celltype_pairs": 65624,
+    "global_bh_fdr_threshold": 0.05,
+    "globally_significant_gene_celltype_pairs": 0,
+    "minimum_global_fdr": 0.308834036196974,
+    "within_celltype_fdr_below_0_05_exploratory": 0,
+    "cell_type_abundance_inference_performed": false,
+    "he_fibro_role": "PRESPECIFIED_PARTICIPANT_LEVEL_DESCRIPTIVE_VALIDATION_ONLY"
+  },
+  "conclusion": "VALID_GLOBAL_NULL_IN_SUPPORTING_PARTICIPANT_LEVEL_SINGLE_CELL_ANALYSIS",
+  "submission_safe_interpretation": "Participant-level pseudobulk analysis across eight eligible cell types identified no gene-by-cell-type association after global Benjamini-Hochberg correction across 65,624 tests.",
+  "strict_boundaries": [
+    "Zero global-FDR findings are a valid reportable result and must not trigger post-hoc threshold relaxation.",
+    "The result does not establish biological absence and is not independent replication of M03-M05 findings.",
+    "Cells and libraries were not treated as healer/nonhealer replicates.",
+    "Cell-type abundance and the prespecified HE-Fibro signature are descriptive only.",
+    "Clinical outcome was not used for clustering or annotation.",
+    "GSE199939, forearm skin and PBMC data were excluded from the core analysis.",
+    "M07 remains supporting/value-add and cannot weaken the locked M01-M05 manuscript conclusions."
+  ],
+  "reproducibility": {
+    "status": "REPRODUCIBILITY_CONDITIONAL",
+    "reason": "All exact executed-run evidence is complete, but no independent equivalence rerun was authorized.",
+    "post_run_archive_validation": "PASS_WITH_DECLARED_GAPS",
+    "declared_gap": "M07_FULL_GAP_NO_EQUIVALENCE_RERUN"
+  },
+  "evidence": {
+    "execution_summary": {
+      "path": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/runs/M07_FULL_CORE_V1_20260826T000000Z/M07_FULL_EXECUTION_SUMMARY_v1.json",
+      "sha256": "e94f42f384298968232aa426f1aa432c9bc85421ed827ddebb8b17868a7f10a2"
+    },
+    "resource_summary": {
+      "path": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/runs/M07_FULL_CORE_V1_20260826T000000Z/M07_FULL_RESOURCE_SUMMARY_v1.json",
+      "sha256": "cdd8a138dc7d91966a41ef7146d2ce2ab3055921df2ec123697e8783b5ed990e"
+    },
+    "analysis_summary": {
+      "path": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/runs/M07_FULL_CORE_V1_20260826T000000Z/02_r_full/M07_FULL_ANALYSIS_SUMMARY_v1.json",
+      "sha256": "5ee92006016ab53b6df28ce1d202754399b372e60b98339a43aa701f68f78d84"
+    },
+    "saved_validator": {
+      "path": "05_analysis_steps/M07_SINGLE_CELL_CONTEXT/runs/M07_FULL_CORE_V1_20260826T000000Z/M07_FULL_POST_RUN_VALIDATION_v1.json",
+      "sha256": "def24d7d7a1b7924886d62b715c0f9c787b086c37b9a8679739d14674d3896d6"
+    },
+    "independent_post_run_qc": {
+      "path": "08_qc/M07_FULL_POST_RUN_QC_v1_20260826.json",
+      "sha256": "cea018cee0cdbaa5435826f34c39e5078d5a111bc3f393271e2d4be7497493c8"
+    },
+    "pdf_visual_qc": {
+      "path": "08_qc/M07_FULL_PDF_VISUAL_QC_v1_20260826.json",
+      "sha256": "1d7fdc17b4fa46b89e2133c316d6203febadc2a4628958bbb0ccc32b1818202d"
+    },
+    "sq8_post_run_lock_qc": {
+      "path": "08_qc/M07_SQ8_FULL_POST_RUN_LOCK_VERIFICATION_v1_20260826.json",
+      "sha256": "ae0660ec6054df0a89efcadb2df5f14b907ee47f3c4d33789e9cce3b7973bb65"
+    },
+    "post_run_archive_package": {
+      "path": "06_locked_results/reproducibility_archives/M07_SINGLE_CELL_CONTEXT_FULL_CORE_POST_RUN_v1/00_archive_control/archive_package_sha256.csv",
+      "sha256": "1b514215b9a0242c0a8abe1e4582c9264e403af60814f8daeddab9129a10adfd"
+    },
+    "post_run_archive_lock": {
+      "path": "06_locked_results/reproducibility_archives/M07_SINGLE_CELL_CONTEXT_FULL_CORE_POST_RUN_v1/00_archive_control/post_run_lock_evidence.json",
+      "sha256": "0c07f729774193cea343fa4b7d7b87984673a4dbc16caca063d4ca1e586ddecc"
+    }
+  },
+  "accepted_object_manifest": "06_locked_results/modules/M07_SINGLE_CELL_CONTEXT/full_core_v1/M07_FULL_CORE_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+  "next_gate": "M07_FULL_CORE_FINAL_DOD_ATTESTATION"
+}

@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M03_WITHIN_STUDY_EFFECTS",
+  "generated_at_utc": "2026-08-25T13:07:42.436557+00:00",
+  "classification": "PASS_WITH_LIMITATION_DOD_25_OF_25_REPRODUCIBILITY_FULL",
+  "checks_total": 25,
+  "checks_passed": 25,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check_id": "DOD_CONTRACT",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_AUTHOR_QC_ROUTE",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_SCRIPT_FIRST",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_INPUT_AUTHORITY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_PLATFORM",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_SAMPLE_IDENTITY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_GROUP_COUNTS",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_ALIAS_BOUNDARY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_PREPROCESSING",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_ANNOTATION",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_MODEL",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_PRIMARY_CONTRASTS",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_SENSITIVITY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_MULTIPLICITY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_QC",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_NO_POSTHOC_EXCLUSION",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_QC_CLASSIFICATION",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_REPRODUCIBILITY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_VALIDATION",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_EQUIVALENCE",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_SENSITIVITY_COMPARISON",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_INTERPRETATION_BOUNDARY",
+      "status": "PASS",
+      "required": true
+    },
+    {
+      "check_id": "DOD_ARCHIVE",
+      "status": "PASS",
+      "required": true,
+      "evidence": "SQ8 v3 post-run archive PASS; zero issues/gaps; 187/187 files read-only"
+    },
+    {
+      "check_id": "DOD_ACCEPTANCE",
+      "status": "PASS",
+      "required": true,
+      "evidence": "Accepted result lock present; byte-identical promotion; 69/69 files read-only"
+    },
+    {
+      "check_id": "DOD_STATE",
+      "status": "PASS",
+      "required": true,
+      "evidence": "SQ9 RESUME_OK; M03 registry complete; REQ005 fulfilled; nonblocking limitation carried forward"
+    }
+  ],
+  "archive": {
+    "path": "06_locked_results/reproducibility_archives/M03_WITHIN_STUDY_EFFECTS_V3_POST_RUN_v3",
+    "lock_sha256": "195c8217b13dfb888e7c34a0ba1f18cfa0d0dfe3bc6e0cfe00c96a1326d65789",
+    "files_readonly": "187/187",
+    "validation": "PASS_ZERO_ISSUES_ZERO_GAPS"
+  },
+  "accepted_result": {
+    "path": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS/v1",
+    "lock_sha256": "4c73b8082bd7e38f5e65b71d661b6de04122d1507fb098eaab64305880822dfa",
+    "files_readonly": "69/69",
+    "primary_authority": "ALL12_PRIMARY",
+    "sensitivity_authority": "N11_EXCLUDE_GSM2114233_SENSITIVITY_ONLY"
+  },
+  "state": {
+    "sq9_verdict": "RESUME_OK",
+    "module_state": "COMPLETED_PASS_WITH_LIMITATION_REPRODUCIBILITY_FULL",
+    "requirement_status": "FULFILLED_PASS_WITH_LIMITATION",
+    "limitation_debt_status": "OPEN_LIMITATION_CARRY_FORWARD"
+  },
+  "scientific_conclusion": "No gene reaches BH FDR < 0.05 in either prespecified all-12 primary DFU contrast; global effects remain stable in n=11 sensitivity, while threshold-level significance is sample-sensitive.",
+  "mandatory_limitations": [
+    "GSM2114233 is a multi-metric QC outlier retained in the primary analysis under the author-approved route.",
+    "Unique ENTREZ mapping yield is diagnostic and limits annotation coverage.",
+    "Sensitivity-only significance must not be presented as a robust primary gene finding.",
+    "The naive merged-control contrast is sensitivity-only; DFS and NFS remain separate primary comparators."
+  ],
+  "cannot_conclude": [
+    "No primary gene-level differential-expression discovery at BH FDR < 0.05 can be claimed from GSE80178.",
+    "CBLL2 or any naive-contrast sensitivity-only gene cannot be claimed as a validated DFU biomarker from M03 alone.",
+    "Internal deterministic reproduction does not establish external biological validation."
+  ],
+  "source_hashes": {
+    "result_lock": "4c73b8082bd7e38f5e65b71d661b6de04122d1507fb098eaab64305880822dfa",
+    "archive_lock": "195c8217b13dfb888e7c34a0ba1f18cfa0d0dfe3bc6e0cfe00c96a1326d65789",
+    "module_registry": "541ad11555a4282f19b8031c1df6e77b42ba2cdaae5bcbdcbdde5f213934ab7d",
+    "requirements_traceability": "cdec1c825ca3e104962f720fa238611655b8cc8262d5b4d1d5f947e48044786f",
+    "debt_register": "400e4e558f763b9f2fb8cb812f24b69658e122e499f045b6d7b2687926f0f030",
+    "builder_script": "04083c59f8c422c03b7173413edf3d2c73ed00de42504a931818aa288d09726c"
+  },
+  "next_gate": "G3_M04_PROSPECTIVE_CONTRACT_AND_PRE_RUN",
+  "expression_recalculated": false,
+  "source_files_modified": false
+}

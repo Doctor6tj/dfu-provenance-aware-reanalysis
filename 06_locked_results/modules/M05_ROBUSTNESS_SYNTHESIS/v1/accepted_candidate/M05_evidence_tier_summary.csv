@@ -1,0 +1,8 @@
+priority,tier_id,rule,n_genes,robust_claim_eligible,manuscript_role
+1,ROBUST_CROSS_STUDY_COMPATIBLE,All robust-signal gates pass,0,TRUE,Primary robust signal
+2,PRIMARY_BOTH_SEPARATE_INTERNAL_ONLY,All12 passes both separate comparators with same direction but fewer than two independent studies,0,FALSE,Within-study primary support only
+3,PRIMARY_SINGLE_SEPARATE_INTERNAL_ONLY,All12 passes at least one but not both separate comparators,0,FALSE,Comparator-specific within-study evidence only
+4,PRIMARY_NAIVE_MERGED_ONLY_NOT_ROBUST,All12 pooled contrast passes but neither separate comparator passes,0,FALSE,Naive merged-comparator dependence
+5,SENSITIVITY_ONLY_SEPARATE_NOT_ROBUST,No all12 separate-comparator hit and n11 passes at least one separate comparator,1,FALSE,QC sensitivity only
+6,SENSITIVITY_ONLY_NAIVE_MERGED_NOT_ROBUST,No all12 separate-comparator hit and only the n11 pooled contrast passes,8,FALSE,Naive QC sensitivity only
+7,NO_THRESHOLD_SIGNAL,No preceding threshold evidence tier applies,18856,FALSE,No gene-level threshold signal

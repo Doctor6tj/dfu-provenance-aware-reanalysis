@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L3B_M03_QC_ROUTE_AUTHOR_DECISION_v1",
+  "decision_id": "DEC_M03_ALL12_PRIMARY_N11_SENSITIVITY_AUTHOR_APPROVED_20260825",
+  "module_id": "M03_WITHIN_STUDY_EFFECTS",
+  "decided_at": "2026-08-25T11:54:32Z",
+  "authority": "AUTHOR",
+  "status": "APPROVED_AND_LOCKED",
+  "trigger": {
+    "run_id": "M03_GSE80178_CORE_V2_20260825T113000Z",
+    "candidate_status": "HOLD_QC_REVIEW",
+    "post_run_validation": "05_analysis_steps/M03_WITHIN_STUDY_EFFECTS/runs/M03_GSE80178_CORE_V2_20260825T113000Z/M03_POST_RUN_VALIDATION.json",
+    "post_run_validation_sha256": "01ddae9a60275615aefd90d436d7ede4548dceb43cab483d1dcc78bb250cb4d6",
+    "qc_flags": "05_analysis_steps/M03_WITHIN_STUDY_EFFECTS/runs/M03_GSE80178_CORE_V2_20260825T113000Z/M03_qc_review_flags.csv",
+    "qc_flags_sha256": "6a4d96b6347f652cf6ac6c06affc3585ce15113db52c8fdf119513606a1d77c8"
+  },
+  "author_decision": {
+    "primary_route": "Retain all 12 source-eligible GSE80178 arrays as the primary analysis; do not delete any sample post hoc.",
+    "outlier_disclosure": "Explicitly identify GSM2114233 as a multi-metric QC outlier and carry the limitation into result interpretation and reporting.",
+    "sensitivity_route": "Run a separately labelled n=11 sensitivity analysis excluding GSM2114233 only, with raw-CEL RMA recomputed on the remaining 11 arrays and all other preprocessing, annotation, model, contrast, and multiplicity rules unchanged.",
+    "diagnostic_reclassification": "Treat the global minimum pairwise correlation and the 59.68% unique ENTREZ mapping fraction as review diagnostics rather than automatic rejection criteria; annotation yield is not evidence of individual-array failure.",
+    "limitation_rule": "Retaining GSM2114233 may support PASS_WITH_LIMITATION only after structural QC, independent validation, deterministic equivalence, and the prespecified n=11 sensitivity comparison are complete.",
+    "no_other_exclusion": "No sample other than GSM2114233 may be removed in the approved sensitivity route without a new author decision."
+  },
+  "scope_control": {
+    "primary_sample_universe_changed": false,
+    "dataset_roles_changed": false,
+    "independence_unit_changed": false,
+    "primary_estimands_changed": false,
+    "new_result_affecting_sensitivity_added": true,
+    "l2_l3_handling": "Preserve L2 and L3 v1 unchanged; create only a bounded derived sensitivity exception and a versioned M03 contract under this author lock.",
+    "affected_module": "M03_WITHIN_STUDY_EFFECTS and downstream modules that consume its accepted result",
+    "unaffected_locked_results": [
+      "M01_PROVENANCE_AUDIT",
+      "M02_COHORT_HARMONIZATION"
+    ]
+  },
+  "required_execution": {
+    "primary_original": "new unique all-12 v3 run",
+    "primary_equivalence": "second isolated all-12 v3 run",
+    "sensitivity_original": "new unique n=11 exclusion run",
+    "sensitivity_equivalence": "second isolated n=11 exclusion run",
+    "comparison": "saved deterministic script comparing equivalence plus all-12 versus n=11 effect direction, ranking, significance, and QC",
+    "foreground_only": true,
+    "output_overwrite_allowed": false,
+    "promotion_before_complete_qc": false
+  },
+  "preserve_do_not_modify": [
+    "03_data/raw_external_READ_ONLY/GSE80178/GSE80178_RAW.tar",
+    "04_code/configs/M03_GSE80178_sample_manifest_v1.csv",
+    "04_code/R/m03_run_gse80178_core_v2.R",
+    "04_code/parameter_manifests/M03_WITHIN_STUDY_EFFECTS_parameters_v1.json",
+    "02_protocol_and_design/module_contracts/M03_WITHIN_STUDY_EFFECTS_v2.json",
+    "05_analysis_steps/M03_WITHIN_STUDY_EFFECTS/runs/M03_GSE80178_CORE_20260825T111500Z",
+    "05_analysis_steps/M03_WITHIN_STUDY_EFFECTS/runs/M03_GSE80178_CORE_V2_20260825T113000Z",
+    "all existing M03 reproducibility archives",
+    "all accepted M01 and M02 results"
+  ],
+  "next_gate": "M03_V3_CHANGE_CONTROL_AND_PRE_RUN_READINESS"
+}

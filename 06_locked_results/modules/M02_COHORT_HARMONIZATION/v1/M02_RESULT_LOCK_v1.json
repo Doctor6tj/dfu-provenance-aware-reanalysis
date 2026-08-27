@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "module_id": "M02_COHORT_HARMONIZATION",
+  "version": "v1",
+  "status": "ACCEPTED_LOCKED",
+  "accepted_at": "2026-08-25T10:07:06.860798+00:00",
+  "scientific_boundary": "Metadata and analysis-interface harmonization only; no expression analysis",
+  "primary_run_id": "M02_HARMONIZATION_20260825T094000Z",
+  "equivalence_run_id": "M02_HARMONIZATION_EQUIVALENCE_20260825",
+  "source_candidate_status": "PASS_INTERFACE_CANDIDATE_PENDING_ACCEPTANCE",
+  "entrypoint": {
+    "path": "04_code/Python/m02_build_cohort_harmonization_interfaces.py",
+    "sha256": "a91d8367287aee754b230dac10aea9b43f75e0c75841fc0a232e92effd3c4c32"
+  },
+  "parameters_sha256": "62075a0be75f1f45d492cec4b6413275220e4fe16625965e0729aaef2ce59b58",
+  "comparator_rules_sha256": "4054a10a1ac0380b21e4ce0fa07b4090f81659d9cc3bd62ead17a65a3d0e33bd",
+  "equivalence_report": {
+    "path": "08_qc/M02_DETERMINISTIC_EQUIVALENCE_20260825.json",
+    "bytes": 3828,
+    "sha256": "d5adb02475649911006ab05917e5c8aadbd0f83b7a3cd4e82a2e4272303526e1"
+  },
+  "acceptance_checks": {
+    "primary_qc_pass": true,
+    "equivalence_qc_pass": true,
+    "substantive_objects_byte_identical_5_of_5": true,
+    "promotion_hash_identity_6_of_6": true,
+    "expression_analysis_performed": false,
+    "source_overwrite_performed": false
+  },
+  "counts": {
+    "accession_rows": 127,
+    "analytic_participant_units": 94,
+    "dataset_accession_rows": {
+      "GSE134431": 21,
+      "GSE143735": 13,
+      "GSE165816": 54,
+      "GSE199939": 21,
+      "GSE68183": 6,
+      "GSE80178": 12
+    },
+    "shared_exact_alias_pairs": 6,
+    "gse165816_participants": 27
+  },
+  "accepted_objects": {
+    "M02_accession_level_manifest.csv": {
+      "bytes": 61956,
+      "sha256": "b5f696562cea8d46854eedffa36e4241ee02d391cfc02b7cd49cc8abc1c39027"
+    },
+    "M02_participant_level_manifest.csv": {
+      "bytes": 22210,
+      "sha256": "9e44fedc5928409ab8c5e34e9ab5555921f140d47a15199fcfaf22424339180e"
+    },
+    "M02_comparator_compatibility_matrix.csv": {
+      "bytes": 1852,
+      "sha256": "6dab6ff30992d86f6a6cb80039a063a84c92f77c6ec8c670e44df5c824f00b6b"
+    },
+    "M02_INTERFACE_QC.json": {
+      "bytes": 1137,
+      "sha256": "5ee6055bcec19157f5ab8e3c9b866138bde9ec0642776469eaab5322b69f99b2"
+    },
+    "M02_INTERFACE_LOCK_CANDIDATE_v1.json": {
+      "bytes": 2280,
+      "sha256": "078e1d632fec15b15a55b0d427da818442bcad358ca19fe3174d404faa98e85c"
+    },
+    "M02_execution_log.json": {
+      "bytes": 211,
+      "sha256": "c636b427574963bc502422f8e6118c76793d1475deb8bedaf3d0fc1ffb1828c4"
+    }
+  },
+  "next_gate": "G3C_M03_CONTRACT_AND_ANALYSIS_PRE_RUN"
+}

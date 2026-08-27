@@ -1,0 +1,18 @@
+# Local raw data and regenerated outputs
+03_data/raw_external_READ_ONLY/
+outputs/
+.verification/
+
+# Python and R local state
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
+

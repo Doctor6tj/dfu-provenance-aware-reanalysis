@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L5R_M05_ACCEPTED_RESULT_v1",
+  "module_id": "M05_ROBUSTNESS_SYNTHESIS",
+  "version": "v1",
+  "status": "ACCEPTED_LOCKED_VALID_NULL_INSUFFICIENT_INDEPENDENT_COMPATIBLE_EVIDENCE",
+  "accepted_at": "2026-08-25T15:28:45.548438+00:00",
+  "scientific_boundary": "One independent compatible core study is below the prespecified minimum of two; no cross-study robust gene or pathway can be established.",
+  "source_archive": {
+    "archive_id": "DFU_PROVENANCE_REPRODUCIBILITY_2026__M05_ROBUSTNESS_SYNTHESIS__v1",
+    "path": "06_locked_results/reproducibility_archives/M05_ROBUSTNESS_SYNTHESIS_POST_RUN_v1",
+    "lock_sha256": "6b1fb661383b49229a6b697c6303dc223026e9e0ded3af98084ddfa5b52d736d",
+    "status": "REPRODUCIBILITY_FULL"
+  },
+  "accepted_sources": {
+    "original_run_id": "M05_ROBUSTNESS_V1R1_20260825T161000Z",
+    "equivalence_run_id": "M05_ROBUSTNESS_V1R1_EQ_20260825T162000Z",
+    "comparison_run_id": "M05_ROBUSTNESS_V1R1_COMPARISON_20260825T163000Z"
+  },
+  "acceptance_checks": {
+    "original_validation": "PASS_41_OF_41",
+    "equivalence_validation": "PASS_41_OF_41",
+    "deterministic_equivalence": "PASS_14_OF_14",
+    "skill8_validation": "PASS_ZERO_ISSUES_ZERO_GAPS",
+    "promotion_byte_identity": true,
+    "source_overwrite_performed": false,
+    "expression_or_de_recalculation_performed": false,
+    "pathway_enrichment_performed": false
+  },
+  "gene_rows": 18865,
+  "robust_cross_study_gene_count": 0,
+  "evidence_tier_counts": {
+    "ROBUST_CROSS_STUDY_COMPATIBLE": 0,
+    "PRIMARY_BOTH_SEPARATE_INTERNAL_ONLY": 0,
+    "PRIMARY_SINGLE_SEPARATE_INTERNAL_ONLY": 0,
+    "PRIMARY_NAIVE_MERGED_ONLY_NOT_ROBUST": 0,
+    "NO_THRESHOLD_SIGNAL": 18856,
+    "SENSITIVITY_ONLY_NAIVE_MERGED_NOT_ROBUST": 8,
+    "SENSITIVITY_ONLY_SEPARATE_NOT_ROBUST": 1
+  },
+  "pathway_robustness": "NOT_ESTIMABLE_NOT_PERFORMED",
+  "primary_authority": "ALL12_PRIMARY",
+  "sensitivity_authority": "N11_EXCLUDE_GSM2114233_SENSITIVITY_ONLY",
+  "accepted_interpretation": [
+    "No gene satisfies the prespecified cross-study robustness definition.",
+    "This is a valid null/insufficient-evidence result because only one independent compatible core study is available.",
+    "The n11 threshold signals are retained only as QC-sensitivity observations and are not promoted."
+  ],
+  "claims_allowed": [
+    "The core local-DFU evidence base contains one independent compatible study after provenance correction.",
+    "No robust cross-study gene or pathway signal was established under the prespecified rules."
+  ],
+  "cannot_conclude": [
+    "No gene can be claimed as an independently replicated DFU biomarker.",
+    "GSE68183 cannot be used as external replication of GSE80178.",
+    "Sensitivity-only or merged-control findings cannot be promoted as primary discoveries.",
+    "Absence of robust evidence is not evidence of biological absence."
+  ],
+  "scope_firewalls": {
+    "GSE199939": "EXCLUDED_FROM_CORE; background skin context only or separately labelled sensitivity analysis",
+    "GSE165816": "DEFERRED_TO_M07_SINGLE_CELL_CONTEXT",
+    "M06": "HEALING_OUTCOME_CONTEXT_NOT_PART_OF_M05"
+  },
+  "failed_validator_v1_candidate": "PRESERVED_UNACCEPTED_NOT_USED_FOR_PROMOTION",
+  "accepted_object_manifest": {
+    "path": "M05_ACCEPTED_OBJECT_MANIFEST_v1.csv",
+    "rows": 29,
+    "sha256": "0eb1aa71415531fb24373de7383cfb4f902c7ad260a96b7d5f6309bbfffe791c"
+  },
+  "next_gate": "G5_M05_FINAL_DOD_AND_SQ9_STATE_SYNC",
+  "mutation_rule": "Do not modify this accepted result. Any correction requires SQ2 change control and a new accepted version."
+}

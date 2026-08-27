@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L3_ANALYSIS_STATISTICAL_PLAN_v1",
+  "scope": "analysis_and_statistical_plan",
+  "version": "v1",
+  "status": "ACTIVE",
+  "approved_by": "AUTHOR",
+  "approved_date": "2026-08-25",
+  "primary_analysis_family": [
+    "source-verified study participant sample and comparator manifest",
+    "prespecified exact and near-identity sample-reuse audit",
+    "participant-aware within-study effects for verified contrasts",
+    "naive versus provenance-aware sensitivity comparison",
+    "study-aware synthesis restricted to biologically compatible contrasts"
+  ],
+  "primary_endpoints": [
+    "change in apparent cross-study concordance after non-independent evidence and comparator mismatch are corrected",
+    "number and identity of gene or pathway signals directionally stable under all prespecified provenance-aware sensitivities"
+  ],
+  "multiplicity": {
+    "gene_level": "Benjamini-Hochberg FDR within each declared study-contrast family",
+    "pathway_level": "correction within each declared pathway collection and contrast",
+    "cross_study": "prespecified direction and effect-size stability with uncertainty; not nominal-P-value intersection"
+  },
+  "sensitivity_dimensions": [
+    "shared samples retained versus removed or collapsed",
+    "correct comparator classes versus naive merged controls",
+    "participant-level versus naive library or cell-level inference where relevant",
+    "leave-one-study-out stability",
+    "result-preserving platform and annotation harmonization alternatives"
+  ],
+  "forbidden_without_reopen": [
+    "post-hoc sample exclusion",
+    "unplanned covariate or model change",
+    "changed primary endpoint or threshold",
+    "direct raw-expression pooling across incompatible studies or platforms"
+  ],
+  "reopen_authority": "AUTHOR"
+}
+

@@ -1,0 +1,6 @@
+"axis_id","observed_naive","observed_aware","interpretation","robust_claim_eligible"
+"M04_AXIS_REUSED_CONTROLS","2 accession containers and 12 accession rows appear independent","6 exact aliases collapse to 6 unique objects; numerical equivalence=TRUE","Pseudo-replication cannot support external validation",FALSE
+"M04_AXIS_MERGED_COMPARATOR","0 primary-profile gene hits in pooled contrast","0 genes pass BH FDR in both separate primary comparators","Pooled-control findings cannot replace separate comparator inference",FALSE
+"M04_AXIS_QC_SAMPLE","9 n11 pooled-contrast sensitivity gene hits","All12 remains primary; n11 is QC sensitivity only","Sensitivity-only threshold findings are not primary robust findings",FALSE
+"M04_AXIS_PARTICIPANT_LIBRARY","54 GSE165816 libraries could be miscounted as independent","Deferred to M07 participant-aware analysis; not executed in M04","No cell/library-level claim is made by M04",FALSE
+"M04_AXIS_LEAVE_ONE_STUDY_OUT","2 accession labels could be miscounted as 2 studies","1 independent core local-DFU study; leave-one-study-out not estimable","Independent cross-study biological replication cannot be concluded from core M04",FALSE

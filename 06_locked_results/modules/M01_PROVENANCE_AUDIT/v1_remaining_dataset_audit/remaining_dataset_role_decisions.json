@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "decision_status": "PASS_WITH_GSE199939_AUTHOR_DECISION_PENDING",
+  "datasets": {
+    "GSE134431": {
+      "role": "PRIMARY_HEALING_OUTCOME_BULK_CANDIDATE",
+      "defensible_contrast": "DFU_HEALER versus DFU_NONHEALER (7 versus 6 participants)",
+      "comparator_boundary": "Eight nonulcerated diabetic foot-skin samples are contextual comparators, not healing-outcome controls.",
+      "independence_boundary": "One public RNA-seq sample per DFU participant. Donor #31 and UM#31W4 remain a suspected cross-context linkage only; use 21 conservative units and report a possible minimum of 20.",
+      "decision": "INCLUDE_FOR_PARTICIPANT_LEVEL_BULK_HEALING_ANALYSIS"
+    },
+    "GSE143735": {
+      "role": "SYSTEMIC_NONULCERATED_FOREARM_CONTEXT_ONLY",
+      "defensible_contrast": "Forearm skin from DFU healers versus nonhealers versus diabetes without ulcer.",
+      "comparator_boundary": "All biopsies are nonulcerated forearm whole skin; this cannot validate a local DFU-ulcer tissue signature.",
+      "independence_boundary": "13 samples map to 13 source participant aliases; Supplementary Table 5 has concordant 4/5/4 group counts.",
+      "decision": "CONTEXT_ONLY_NOT_IN_LOCAL_DFU_META_ANALYSIS"
+    },
+    "GSE199939": {
+      "role": "BIOLOGICAL_LABEL_CONTRADICTION_HOLD",
+      "defensible_contrast": "Diabetic foot skin versus non-diabetic foot skin at sample-metadata level.",
+      "comparator_boundary": "Series, BioProject, and publication call the diabetic group DFU; all 21 sample and BioSample records annotate only foot skin and diabetes status, with no ulcer field.",
+      "independence_boundary": "21 unique donor aliases and one sample per alias; participant independence is defensible, ulcer-tissue identity is not sample-level verifiable.",
+      "decision": "QUARANTINE_FROM_CORE; PROPOSE_CONTEXT_OR_SENSITIVITY_ONLY; AUTHOR_CONFIRMATION_REQUIRED"
+    },
+    "GSE165816": {
+      "role": "PARTICIPANT_AWARE_SINGLE_CELL_VALUE_ADD",
+      "defensible_contrast": "DFU healer versus nonhealer with diabetes-no-DFU and healthy comparators, stratified by tissue.",
+      "comparator_boundary": "Foot, forearm, and PBMC libraries are different biological compartments and must never be pooled as exchangeable samples.",
+      "independence_boundary": "The primary supplement maps all 54 public libraries to 27 participants: 7 DFU healers, 4 nonhealers, 6 diabetes-no-DFU, and 10 healthy participants.",
+      "decision": "OPTIONAL_VALUE_ADD_WITH_PARTICIPANT_CLUSTERING_OR_PARTICIPANT_LEVEL_AGGREGATION"
+    }
+  },
+  "counts": {
+    "GSE134431": {
+      "sample_accessions": 21,
+      "conservative_participant_units": 21,
+      "sample_biological_groups": {
+        "DFU_HEALER": 7,
+        "DFU_NONHEALER": 6,
+        "DIABETIC_FOOT_SKIN_NONULCERATED": 8
+      },
+      "participant_biological_groups": {
+        "DFU_HEALER": 7,
+        "DFU_NONHEALER": 6,
+        "DIABETIC_FOOT_SKIN_NONULCERATED": 8
+      },
+      "possible_participant_units_if_numeric_31_link_is_real": 20
+    },
+    "GSE143735": {
+      "sample_accessions": 13,
+      "conservative_participant_units": 13,
+      "sample_biological_groups": {
+        "DFU_HEALER_SYSTEMIC_SITE": 5,
+        "DFU_NONHEALER_SYSTEMIC_SITE": 4,
+        "DIABETES_NO_DFU": 4
+      },
+      "participant_biological_groups": {
+        "DFU_HEALER_SYSTEMIC_SITE": 5,
+        "DFU_NONHEALER_SYSTEMIC_SITE": 4,
+        "DIABETES_NO_DFU": 4
+      }
+    },
+    "GSE199939": {
+      "sample_accessions": 21,
+      "conservative_participant_units": 21,
+      "sample_biological_groups": {
+        "DIABETIC_FOOT_SKIN_ULCER_STATUS_UNVERIFIED": 10,
+        "NONDIABETIC_FOOT_SKIN": 11
+      },
+      "participant_biological_groups": {
+        "DIABETIC_FOOT_SKIN_ULCER_STATUS_UNVERIFIED": 10,
+        "NONDIABETIC_FOOT_SKIN": 11
+      }
+    },
+    "GSE165816": {
+      "sample_accessions": 54,
+      "conservative_participant_units": 27,
+      "sample_biological_groups": {
+        "DFU_HEALER": 15,
+        "DFU_NONHEALER": 9,
+        "DIABETES_NO_DFU": 12,
+        "HEALTHY_NONDIABETIC": 18
+      },
+      "participant_biological_groups": {
+        "DFU_HEALER": 7,
+        "DFU_NONHEALER": 4,
+        "DIABETES_NO_DFU": 6,
+        "HEALTHY_NONDIABETIC": 10
+      },
+      "max_libraries_per_participant": 4
+    }
+  },
+  "author_decisions_required": [
+    {
+      "decision_id": "M01_DEC_GSE199939_ROLE",
+      "question": "Approve quarantining GSE199939 from core DFU analyses and retaining it only as diabetic-foot-skin context or a separately labeled sensitivity analysis?",
+      "recommended_choice": "APPROVE_QUARANTINE_AND_CONTEXT_ONLY",
+      "reason": "Ulcer status is asserted at series/publication level but absent from every sample-level and BioSample tissue/disease field."
+    }
+  ]
+}

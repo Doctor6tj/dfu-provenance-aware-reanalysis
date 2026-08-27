@@ -1,0 +1,9 @@
+rule_id,domain,rule,required_for_robust_signal,locked_threshold,interpretation_if_failed
+M05GATE001,independence,At least two independent biologically compatible study units,TRUE,2,CROSS_STUDY_ROBUSTNESS_NOT_ESTIMABLE
+M05GATE002,primary_compatible_contrasts,All12 DFU_vs_DFS and DFU_vs_NFS both have BH FDR below 0.05,TRUE,0.05,NO_PRIMARY_BOTH_COMPARATOR_SUPPORT
+M05GATE003,primary_direction,All12 separate-comparator logFC values have the same nonzero direction,TRUE,SAME_NONZERO_SIGN,COMPARATOR_DIRECTION_INCONSISTENT
+M05GATE004,sensitivity_direction,All12 and n11 separate-comparator logFC values retain one common nonzero direction,TRUE,FOUR_WAY_SAME_NONZERO_SIGN,QC_PROFILE_DIRECTION_UNSTABLE
+M05GATE005,naive_firewall,Eligibility is determined by separate comparators and never by the pooled DFS/NFS contrast,TRUE,SEPARATE_COMPARATORS_ONLY,NAIVE_MERGED_DEPENDENCE_NOT_ROBUST
+M05GATE006,profile_authority,All12 remains primary and n11 remains sensitivity only,TRUE,ALL12_PRIMARY,N11_CANNOT_REPLACE_PRIMARY
+M05GATE007,study_aware_synthesis,No meta-analysis or leave-one-study-out estimate is computed with fewer than two independent studies,TRUE,2,VALID_CANNOT_CONCLUDE_BOUNDARY
+M05GATE008,pathway_boundary,Cross-study pathway robustness requires at least two independent compatible studies and a prospectively locked pathway collection,TRUE,2_AND_LOCKED_COLLECTION,PATHWAY_SYNTHESIS_NOT_ESTIMABLE

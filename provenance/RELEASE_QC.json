@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "release_derivative": "dfu-provenance-aware-reanalysis",
+  "status": "PASS",
+  "scientific_analysis_rerun": false,
+  "validation_scope": "syntax, readability, sensitive strings, provenance mapping, script naming, size, and raw-data exclusion",
+  "checks": [
+    {
+      "check": "mandatory_release_files",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "check": "python_syntax",
+      "status": "PASS",
+      "details": {
+        "files": 26,
+        "errors": []
+      }
+    },
+    {
+      "check": "r_syntax",
+      "status": "PASS",
+      "details": {
+        "files": 8,
+        "errors": []
+      }
+    },
+    {
+      "check": "json_readability",
+      "status": "PASS",
+      "details": {
+        "files": 30,
+        "errors": []
+      }
+    },
+    {
+      "check": "csv_readability",
+      "status": "PASS",
+      "details": {
+        "files": 52,
+        "errors": []
+      }
+    },
+    {
+      "check": "sensitive_path_and_token_scan",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "check": "manuscript_code_map",
+      "status": "PASS",
+      "details": {
+        "mapped_scripts": 34,
+        "errors": []
+      }
+    },
+    {
+      "check": "curated_final_script_names",
+      "status": "PASS",
+      "details": {
+        "history_style_names": []
+      }
+    },
+    {
+      "check": "repository_file_size",
+      "status": "PASS",
+      "details": {
+        "limit_bytes": 52428800,
+        "large_files": []
+      }
+    },
+    {
+      "check": "raw_data_excluded",
+      "status": "PASS",
+      "details": {
+        "raw_files": []
+      }
+    }
+  ]
+}

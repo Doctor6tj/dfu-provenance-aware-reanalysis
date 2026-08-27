@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "candidate": "Figure1_visual_v02.png",
+  "review_status": "PASS_VISUAL_CANDIDATE_AWAITING_USER_LOCK",
+  "review_basis": [
+    "full_1900x1860_render",
+    "all_node_hotspot_crops",
+    "170_mm_font_stress_test"
+  ],
+  "visual_checks": {
+    "major_stage_spacing": "PASS",
+    "sibling_alignment": "PASS",
+    "connector_geometry": "PASS",
+    "text_fit": "PASS",
+    "final_width_readability": "PASS",
+    "information_card_left_anchors": "PASS",
+    "color_role_semantics": "PASS",
+    "palette_budget": "PASS",
+    "visual_hierarchy": "PASS",
+    "density_and_nonduplication": "PASS"
+  },
+  "scientific_structure_checks": {
+    "six_series_named": "PASS",
+    "gse68183_exact_reuse_not_independent": "PASS",
+    "gse80178_core_bulk_only": "PASS",
+    "gse165816_supporting_not_replication": "PASS",
+    "three_noncore_context_series_explicit": "PASS",
+    "participant_level_inference_explicit": "PASS",
+    "evidence_insufficiency_not_biological_absence": "PASS"
+  },
+  "submission_vector_exported": false,
+  "next_gate": "USER_VISUAL_LOCK"
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "config_id": "M02_comparator_compatibility_rules_v1",
+  "rules": [
+    {
+      "contrast_id": "M02C001",
+      "dataset_id": "GSE80178",
+      "case_group": "DFU_ULCER",
+      "comparator_group": "DFS_NONULCERATED_DIABETIC",
+      "tissue_boundary": "LOCAL_FOOT_SKIN",
+      "analysis_role": "PRIMARY_WITHIN_STUDY_COMPARATOR_DECOMPOSITION",
+      "compatibility": "ALLOWED_PRIMARY_SEPARATE_STRATUM",
+      "participant_rule": "12 deduplicated analytic units across the GSE80178 container; shared GSE68183 accessions excluded as aliases"
+    },
+    {
+      "contrast_id": "M02C002",
+      "dataset_id": "GSE80178",
+      "case_group": "DFU_ULCER",
+      "comparator_group": "NFS_HEALTHY_NONDIABETIC",
+      "tissue_boundary": "LOCAL_FOOT_SKIN",
+      "analysis_role": "PRIMARY_WITHIN_STUDY_COMPARATOR_DECOMPOSITION",
+      "compatibility": "ALLOWED_PRIMARY_SEPARATE_STRATUM",
+      "participant_rule": "12 deduplicated analytic units across the GSE80178 container; shared GSE68183 accessions excluded as aliases"
+    },
+    {
+      "contrast_id": "M02C003",
+      "dataset_id": "GSE80178",
+      "case_group": "DFU_ULCER",
+      "comparator_group": "DFS_AND_NFS_POOLED",
+      "tissue_boundary": "LOCAL_FOOT_SKIN",
+      "analysis_role": "NAIVE_OR_COMPATIBILITY_SENSITIVITY",
+      "compatibility": "SENSITIVITY_ONLY_NOT_PRIMARY",
+      "participant_rule": "Preserve DFS and NFS source strata in the manifest even when a declared sensitivity combines them"
+    },
+    {
+      "contrast_id": "M02C004",
+      "dataset_id": "GSE134431",
+      "case_group": "DFU_HEALER",
+      "comparator_group": "DFU_NONHEALER",
+      "tissue_boundary": "LOCAL_DFU_TISSUE",
+      "analysis_role": "SECONDARY_HEALING_OUTCOME",
+      "compatibility": "ALLOWED_SECONDARY_SEPARATE_ENDPOINT",
+      "participant_rule": "7 healers versus 6 nonhealers; eight nonulcerated diabetic foot-skin samples remain contextual"
+    },
+    {
+      "contrast_id": "M02C005",
+      "dataset_id": "GSE143735",
+      "case_group": "DFU_HEALER_SYSTEMIC_SITE",
+      "comparator_group": "DFU_NONHEALER_SYSTEMIC_SITE",
+      "tissue_boundary": "NONULCERATED_FOREARM_SKIN",
+      "analysis_role": "SYSTEMIC_CONTEXT_ONLY",
+      "compatibility": "CONTEXT_ONLY_NOT_LOCAL_DFU_VALIDATION",
+      "participant_rule": "13 independent participants; never pool with local foot or ulcer tissue"
+    },
+    {
+      "contrast_id": "M02C006",
+      "dataset_id": "GSE199939",
+      "case_group": "DIABETIC_FOOT_SKIN_ULCER_STATUS_UNVERIFIED",
+      "comparator_group": "NONDIABETIC_FOOT_SKIN",
+      "tissue_boundary": "FOOT_SKIN_ULCER_STATUS_UNVERIFIED",
+      "analysis_role": "BACKGROUND_OR_SEPARATELY_LABELLED_SENSITIVITY",
+      "compatibility": "EXCLUDED_FROM_CORE",
+      "participant_rule": "21 independent participants; author-approved scope restriction is mandatory"
+    },
+    {
+      "contrast_id": "M02C007",
+      "dataset_id": "GSE165816",
+      "case_group": "DFU_HEALER",
+      "comparator_group": "DFU_NONHEALER",
+      "tissue_boundary": "FOOT_SKIN_STRATIFIED_FROM_FOREARM_AND_PBMC",
+      "analysis_role": "PARTICIPANT_AWARE_SINGLE_CELL_VALUE_ADD",
+      "compatibility": "ALLOWED_VALUE_ADD_WITH_PARTICIPANT_AWARE_MODEL",
+      "participant_rule": "54 libraries from 27 participants; cluster by participant or aggregate to participant level; keep tissue compartments separate"
+    }
+  ],
+  "global_forbidden_operations": [
+    "direct raw-expression pooling across studies",
+    "counting GSE68183 aliases as independent validation samples",
+    "treating GSE165816 libraries as independent participants",
+    "pooling foot skin, forearm skin, and PBMC as exchangeable samples",
+    "including GSE199939 in the core DFU contrast",
+    "using GSE143735 as local ulcer-tissue validation"
+  ]
+}

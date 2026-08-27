@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "lock_id": "L5B_M01_DATASET_RELATIONSHIP_v1",
+  "module_id": "M01_PROVENANCE_AUDIT",
+  "module_version": "v1_metadata_adjudication",
+  "run_id": "M01_METADATA_20260825T063300Z",
+  "corrects_run_id": "M01_METADATA_20260825T062526Z",
+  "locked_at": "2026-08-25T06:36:15.7108739Z",
+  "lock_scope": "GSE68183_GSE80178_RELATIONSHIP_AND_CONSERVATIVE_INDEPENDENCE_MAP",
+  "full_module_closeout": false,
+  "verdict": "PASS_WITH_DECLARED_GAPS",
+  "reproducibility_status": "REPRODUCIBILITY_CONDITIONAL",
+  "accepted_facts": [
+    "GSE68183 contains three non-ulcerated diabetic foot-skin and three healthy non-diabetic foot-skin samples.",
+    "GSE80178 contains six DFU samples plus the same three DFS and three NFS raw control objects.",
+    "All six reused accession pairs have exact decompressed-CEL identity and concordant sample titles and group semantics.",
+    "Eighteen accession rows collapse to twelve conservative analytic independence units.",
+    "GSE68183 is a control-source and comparator-context dataset, not an independent DFU validation cohort for GSE80178."
+  ],
+  "locked_rules": [
+    "Count each exact shared raw object once.",
+    "Do not relabel GSE68183 intact foot skin as DFU tissue.",
+    "Retain DFS and NFS as explicit comparator strata.",
+    "Use pooled foot skin only under a declared compatible-contrast or sensitivity specification.",
+    "Do not invent real participant identifiers."
+  ],
+  "remaining_boundaries": [
+    "Real participant identifiers are not public.",
+    "Full M01 still requires role audit and interface integration for the remaining candidate datasets.",
+    "M02 must validate participant/sample assumptions before modeling."
+  ],
+  "objects": [
+    {"path": "dataset_relationship_decision.json", "sha256": "4b39cebbf81cdb26958ea16fe65553f60c85e4d17018167e6605a5b4916e0a21"},
+    {"path": "gse68183_gse80178_pair_adjudication.csv", "sha256": "e524aef988e73591d526246ccd50fe2cfcf214628b8d6e0162a68891386dc038"},
+    {"path": "participant_sample_map_candidate.csv", "sha256": "7f06457e2e6a9d6ad002f4c0a5c1d6c59ccea84a68c33d16a2d64220a5e47e31"},
+    {"path": "M01_METADATA_QC.json", "sha256": "356beaf0864107e5ef377afcf5be03cb1c9d819482afaf0bdc6f8f84e47c7348"},
+    {"path": "M01_METADATA_POST_RUN_QC_20260825.md", "sha256": "30511d8a4d2360cd769bb76b8bfe98155f46ca2d549b1195e1dfd44b1b5eddcd"},
+    {"path": "M01_METADATA_SKILL8_ARCHIVE_VALIDATION_20260825.json", "sha256": "9ff8fe76970679229a920594a802ea62cc7e270858c28b00a77cba7264fd8317"}
+  ],
+  "accepted_archive_path": "06_locked_results/reproducibility_archives/M01_METADATA_ADJUDICATION_v2",
+  "failed_archive_path": "06_locked_results/reproducibility_archives/M01_METADATA_ADJUDICATION_v1",
+  "reopen_authority": "AUTHOR plus documented primary-source contradiction or M02 interface failure"
+}
