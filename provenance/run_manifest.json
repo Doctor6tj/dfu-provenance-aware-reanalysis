@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "release": "G15_20260828",
+  "run_order": "RUN_ORDER.md",
+  "numeric_analysis_status": "Accepted completed runs; no bioinformatics rerun was performed for G15.",
+  "interpretation_correction": "provenance/G15_INTERPRETATION_CORRECTION.md",
+  "modules": [
+    {
+      "module": "M01",
+      "entrypoint": "04_code/Python/m01_provenance_audit.py",
+      "accepted_results": "06_locked_results/modules/M01_PROVENANCE_AUDIT"
+    },
+    {
+      "module": "M02",
+      "entrypoint": "04_code/Python/m02_build_cohort_harmonization_interfaces.py",
+      "accepted_results": "06_locked_results/modules/M02_COHORT_HARMONIZATION"
+    },
+    {
+      "module": "M03",
+      "entrypoint": "04_code/R/m03_run_gse80178_core_v3.R",
+      "accepted_results": "06_locked_results/modules/M03_WITHIN_STUDY_EFFECTS"
+    },
+    {
+      "module": "M04",
+      "entrypoint": "04_code/R/m04_run_naive_vs_aware_sensitivity_v1.R",
+      "accepted_results": "06_locked_results/modules/M04_NAIVE_VS_AWARE_SENSITIVITY"
+    },
+    {
+      "module": "M05",
+      "entrypoint": "04_code/Python/m05_run_robustness_synthesis_v1.py",
+      "accepted_results": "06_locked_results/modules/M05_ROBUSTNESS_SYNTHESIS"
+    },
+    {
+      "module": "M07",
+      "entrypoint": "04_code/R/m07_run_full_core_analysis_v1.R",
+      "accepted_results": "06_locked_results/modules/M07_SINGLE_CELL_CONTEXT"
+    }
+  ]
+}

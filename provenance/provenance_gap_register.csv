@@ -1,0 +1,5 @@
+﻿gap_id,domain,gap,impact,mitigation,manuscript_disclosure
+GAP01,metadata,GSE199939 specimen-level ulcer status unresolved,Excluded from quantitative core,Context-only role,"Methods, Results, Limitations, Availability"
+GAP02,provenance,Public participant identifiers unavailable for the six reused raw objects,Participant identity beyond exact object reuse cannot be inferred,Conservative analytic units and no identity claim,Methods and Results
+GAP03,evidence,Only one independent compatible core bulk study,Cross-study gene and pathway robustness not estimable,No meta-analysis or robustness success rate reported,"Abstract, Results, Discussion, Figure 4"
+GAP04,sensitivity,"GSM2114233 assessment was targeted, not exhaustive leave-one-out",Sensitivity pattern may not characterize every possible single-profile omission,All-12 primary retained and limitation stated,Methods and Limitations

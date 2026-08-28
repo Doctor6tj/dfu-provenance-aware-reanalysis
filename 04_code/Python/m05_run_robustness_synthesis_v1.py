@@ -24,7 +24,7 @@ from typing import Any, Iterable
 
 
 MODULE_ID = "M05_ROBUSTNESS_SYNTHESIS"
-VALID_NULL = "INSUFFICIENT_INDEPENDENT_COMPATIBLE_EVIDENCE_NO_ROBUST_SIGNAL"
+VALID_NULL = "CROSS_STUDY_ROBUSTNESS_NOT_ESTIMABLE"
 GENE_ROWS_EXPECTED = 18865
 
 
@@ -339,7 +339,7 @@ def main() -> int:
             {"gate_order": 4, "gate_id": "ALL12_N11_FOUR_WAY_DIRECTION", "observed": count_true("four_way_direction_gate"), "required": "same sign", "n_genes_passing": count_true("four_way_direction_gate"), "gate_pass": "DESCRIPTIVE", "hard_gate": "TRUE"},
             {"gate_order": 5, "gate_id": "NAIVE_MERGED_CONTROL_FIREWALL", "observed": count_true("naive_firewall_gate"), "required": "no naive-only dependence", "n_genes_passing": count_true("naive_firewall_gate"), "gate_pass": "DESCRIPTIVE", "hard_gate": "TRUE"},
             {"gate_order": 6, "gate_id": "ALL12_PRIMARY_AUTHORITY", "observed": count_true("primary_authority_gate"), "required": "all12 remains primary", "n_genes_passing": count_true("primary_authority_gate"), "gate_pass": "TRUE", "hard_gate": "TRUE"},
-            {"gate_order": 7, "gate_id": "ALL_GATES_ROBUST", "observed": count_true("robust_cross_study_gene"), "required": "all six gates", "n_genes_passing": count_true("robust_cross_study_gene"), "gate_pass": "FALSE_VALID_NULL", "hard_gate": "TRUE"},
+            {"gate_order": 7, "gate_id": "ALL_GATES_ROBUST", "observed": count_true("robust_cross_study_gene"), "required": "all six gates", "n_genes_passing": count_true("robust_cross_study_gene"), "gate_pass": "NOT_ESTIMABLE", "hard_gate": "TRUE"},
         ]
         write_csv(
             output_dir / "M05_robustness_gate_summary.csv",
@@ -398,7 +398,7 @@ def main() -> int:
             [
                 {"panel": "B", "display_order": 1, "category": "Naive accession labels", "n_genes": 2, "status": "PSEUDO_REPLICATION_RISK", "figure_message": "Two accession labels do not represent two independent studies"},
                 {"panel": "B", "display_order": 2, "category": "Independent compatible studies", "n_genes": 1, "status": "BELOW_MINIMUM", "figure_message": "At least two independent compatible studies were required"},
-                {"panel": "B", "display_order": 3, "category": "Robust cross-study genes", "n_genes": 0, "status": "VALID_NULL", "figure_message": VALID_NULL},
+                {"panel": "B", "display_order": 3, "category": "Cross-study gene robustness", "n_genes": "", "status": "NOT_ESTIMABLE", "figure_message": VALID_NULL},
             ]
         )
         write_csv(
@@ -409,7 +409,7 @@ def main() -> int:
 
         qc_rows = [
             {"qc_domain": "ENGINEERING", "status": "PASS", "finding": "All declared trust-boundary hashes matched; deterministic standard-library execution; no overwrite", "boundary": "No source or accepted upstream object was modified"},
-            {"qc_domain": "STATISTICAL", "status": "PASS_VALID_NULL", "finding": "One independent compatible study is below the prespecified minimum of two", "boundary": "Meta-analysis and leave-one-study-out are not estimable"},
+            {"qc_domain": "STATISTICAL", "status": "NOT_ESTIMABLE", "finding": "One independent compatible study is below the minimum of two defined before final statistical runs", "boundary": "Meta-analysis and leave-one-study-out are not estimable"},
             {"qc_domain": "SCIENTIFIC", "status": "PASS_WITH_LIMITATION", "finding": "No gene satisfies the cross-study robustness definition", "boundary": "Sensitivity-only genes and merged-control findings are not robust biomarkers"},
             {"qc_domain": "PATHWAY", "status": "NOT_ESTIMABLE", "finding": "No prospectively locked cross-study pathway synthesis can be supported", "boundary": "No pathway discovery or promotion was performed"},
         ]
@@ -431,7 +431,7 @@ def main() -> int:
         }
         require(all12_counts == {"DFU_vs_DFS": 0, "DFU_vs_NFS": 0, "DFU_vs_FS_NAIVE": 0}, "M03 primary threshold counts changed")
         require(n11_counts == {"DFU_vs_DFS": 0, "DFU_vs_NFS": 1, "DFU_vs_FS_NAIVE": 9}, "M03 sensitivity threshold counts changed")
-        require(count_true("robust_cross_study_gene") == 0, "Independence gate failed to enforce valid null")
+        require(count_true("robust_cross_study_gene") == 0, "Independence gate failed to enforce the not-estimable boundary")
 
         result_summary = {
             "schema_version": "1.0",
@@ -453,7 +453,8 @@ def main() -> int:
             },
             "threshold_counts": {"all12_primary": all12_counts, "n11_sensitivity_only": n11_counts},
             "evidence_tier_counts": dict(sorted(tier_counts.items())),
-            "robust_cross_study_gene_count": 0,
+            "robust_cross_study_gene_count": None,
+            "cross_study_robustness_estimability": "NOT_ESTIMABLE",
             "robust_cross_study_gene_ids": [],
             "pathway_synthesis": {
                 "performed": False,
@@ -461,13 +462,13 @@ def main() -> int:
                 "promoted_pathways": [],
             },
             "interpretation": [
-                "No gene satisfies the prespecified cross-study robustness definition.",
-                "This is a valid null/insufficient-evidence result because only one independent compatible core study is available.",
+                "Cross-study gene robustness is not estimable because only one independent compatible core study is available.",
+                "The 18,865 genes are the within-study tested universe, not an estimable cross-study denominator.",
                 "The n11 threshold signals are retained only as QC-sensitivity observations and are not promoted.",
             ],
             "claims_allowed": [
                 "The core local-DFU evidence base contains one independent compatible study after provenance correction.",
-                "No robust cross-study gene or pathway signal was established under the prespecified rules.",
+                "Cross-study gene and pathway robustness were not estimable under the defined minimum-study rule.",
             ],
             "cannot_conclude": [
                 "No gene can be claimed as an independently replicated DFU biomarker.",
@@ -476,7 +477,7 @@ def main() -> int:
                 "Absence of robust evidence is not evidence of biological absence.",
             ],
             "scope_firewalls": {
-                "GSE199939": "EXCLUDED_FROM_CORE; background skin context only or separately labelled sensitivity analysis",
+                "GSE199939": "EXCLUDED_FROM_QUANTITATIVE_CORE; context only because specimen-level ulcer status is unresolved",
                 "GSE165816": "DEFERRED_TO_M07_SINGLE_CELL_CONTEXT",
                 "M06": "HEALING_OUTCOME_CONTEXT_NOT_PART_OF_M05",
             },

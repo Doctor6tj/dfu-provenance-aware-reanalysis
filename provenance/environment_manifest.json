@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "python": {
+    "version": "3.12",
+    "requirements": "requirements-python.txt"
+  },
+  "r": {
+    "version": "4.5.3",
+    "requirements": "requirements-r.txt"
+  },
+  "module_environment_captures": "04_code/environments",
+  "notes": "See module-specific sessionInfo files for accepted package versions."
+}

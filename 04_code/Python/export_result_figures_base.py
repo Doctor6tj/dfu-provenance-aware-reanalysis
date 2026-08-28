@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Export the author-approved result figures as PNG, PDF, and legend TXT.
+"""Export the locked DFU result figures with a Figure 3 wording clarification.
 
 The accepted plotting builders are rerun only to render at 600 dpi and vector
-PDF. No bioinformatics or statistical analysis is rerun. The submission
-folder intentionally contains only the requested simple deliverables plus a
-short README and manifest; no hashes are calculated.
+PDF. No bioinformatics or statistical analysis is rerun. Figure 3 receives one
+scripted in-panel note clarifying that the one-gene DFU-versus-NFS set is
+contained within the pooled nine-gene set; its legend is updated in the same
+export path.
 """
 
 from __future__ import annotations
@@ -20,6 +21,27 @@ from PIL import Image
 
 import result_figure_layout as prior
 import panel_header_layout as rules
+
+
+FIGURE3_NOTE = (
+    "DFU-vs-NFS 1-gene set is included in\n"
+    "the pooled 9-gene set (union = 9)."
+)
+
+FIGURE3_LEGEND = (
+    "Figure 3. Consequences of naive accession counting and sensitivity specifications. "
+    "(A) Naive counting treated 12 control accession rows across two dataset containers as "
+    "independent; provenance-aware counting identified six unique control objects within one "
+    "compatible study. (B) Gene-level log-fold changes were numerically identical across the "
+    "reused containers, which is expected for exact duplicates and does not constitute validation. "
+    "(C) No all-12 primary or pooled-comparator signal crossed BH FDR 0.05. In the n=11 "
+    "sensitivity analysis, the DFU-versus-NFS comparison yielded one gene and the pooled-comparator "
+    "comparison yielded nine genes. The single DFU-versus-NFS gene was included among the nine "
+    "pooled-comparator genes, so their union comprised nine genes. All were sensitivity-only.\n"
+)
+
+FINAL_VERSION_BY_FIGURE = {"Figure2": "v06", "Figure3": "v06", "Figure4": "v04"}
+SUPERSEDES_BY_FIGURE = {"Figure2": "Figure2 v05", "Figure3": "Figure3 v05", "Figure4": "Figure4 v03"}
 
 
 def write_text_new(path: Path, text: str) -> None:
@@ -59,7 +81,7 @@ def main() -> int:
     python_stage.mkdir()
     build_dirs = {
         "Figure2": python_stage / "Figure2_v06_600dpi_vector",
-        "Figure3": python_stage / "Figure3_v05_600dpi_vector",
+        "Figure3": python_stage / "Figure3_v06_600dpi_vector",
         "Figure4": python_stage / "Figure4_v04_600dpi_vector",
     }
 
@@ -77,7 +99,26 @@ def main() -> int:
                 row["notes"] = f"Final export scientific-body anchor={kinds[row['panel_id']]}; axes_fraction_x={xs[row['panel_id']]:.3f}"
         return rows
 
+    def add_figure3_set_relation(fig, headers: list[tuple]) -> None:
+        panel_c_ax = None
+        for ax, tag_obj, _title_obj in headers:
+            tag = tag_obj.get_text() if hasattr(tag_obj, "get_text") else str(tag_obj)
+            if tag == "C":
+                panel_c_ax = ax
+                break
+        if panel_c_ax is None:
+            raise RuntimeError("Figure 3 Panel C was not found in the locked header list")
+        panel_c_ax.text(
+            0.24, 0.91, FIGURE3_NOTE,
+            transform=panel_c_ax.transAxes,
+            ha="left", va="top",
+            fontsize=6.5, color="#66717D",
+            linespacing=1.15, clip_on=False, zorder=20,
+        )
+
     def save_png_and_pdf(fig, path: Path, headers: list[tuple]) -> list[dict]:
+        if "Figure3" in path.name or "Figure3" in str(path.parent):
+            add_figure3_set_relation(fig, headers)
         metrics = prior.lock_and_measure_headers(fig, headers)
         pdf_path = path.with_suffix(".pdf")
         if path.exists() or pdf_path.exists():
@@ -95,13 +136,13 @@ def main() -> int:
     def mapped_write_contract(out, figure_id, metrics, scientific_rows, validator, coverage_validator, version):
         return original_write_contract(
             out, figure_id, metrics, scientific_rows, validator, coverage_validator,
-            rules.VERSION_BY_FIGURE[figure_id],
+            FINAL_VERSION_BY_FIGURE[figure_id],
         )
 
     def mapped_write_qc(out, figure_id, version, candidate, supersedes):
         return original_write_qc(
-            out, figure_id, rules.VERSION_BY_FIGURE[figure_id], candidate,
-            rules.SUPERSEDES_BY_FIGURE[figure_id],
+            out, figure_id, FINAL_VERSION_BY_FIGURE[figure_id], candidate,
+            SUPERSEDES_BY_FIGURE[figure_id],
         )
 
     prior.write_contract = mapped_write_contract
@@ -114,8 +155,9 @@ def main() -> int:
     rules.rename_revision_files(build_dirs["Figure2"], "v05", "v06")
 
     prior.build_figure3(root, candidate_root, build_dirs["Figure3"], validator, coverage)
-    rules.rename_revision_files(build_dirs["Figure3"], "v04", "v05")
-    rules.rename_revision_files(build_dirs["Figure3"], "v03", "v05")
+    rules.rename_revision_files(build_dirs["Figure3"], "v05", "v06")
+    rules.rename_revision_files(build_dirs["Figure3"], "v04", "v06")
+    rules.rename_revision_files(build_dirs["Figure3"], "v03", "v06")
 
     prior.build_figure4(root, build_dirs["Figure4"], validator, coverage)
     rules.rename_revision_files(build_dirs["Figure4"], "v03", "v04")
@@ -123,7 +165,7 @@ def main() -> int:
 
     main_sources = {
         "Figure2": (build_dirs["Figure2"] / "Figure2_visual_v06.png", build_dirs["Figure2"] / "Figure2_visual_v06.pdf", build_dirs["Figure2"] / "legend_v06.md"),
-        "Figure3": (build_dirs["Figure3"] / "Figure3_visual_v05.png", build_dirs["Figure3"] / "Figure3_visual_v05.pdf", build_dirs["Figure3"] / "legend_v05.md"),
+        "Figure3": (build_dirs["Figure3"] / "Figure3_visual_v06.png", build_dirs["Figure3"] / "Figure3_visual_v06.pdf", build_dirs["Figure3"] / "legend_v06.md"),
         "Figure4": (build_dirs["Figure4"] / "Figure4_visual_v04.png", build_dirs["Figure4"] / "Figure4_visual_v04.pdf", build_dirs["Figure4"] / "legend_v04.md"),
     }
 
@@ -142,7 +184,7 @@ def main() -> int:
         **main_sources,
         "FigureS1": (s1_stage / "FigureS1_600dpi.png", s1_stage / "FigureS1.pdf", s1_stage / "legend_v06.md"),
     }
-    selected_versions = {"Figure2": "v06", "Figure3": "v05", "Figure4": "v04", "FigureS1": "v06"}
+    selected_versions = {"Figure2": "v06", "Figure3": "v06", "Figure4": "v04", "FigureS1": "v06"}
     manifest_rows = []
     for figure_id, (png_source, pdf_source, legend_source) in sources.items():
         png_target = output / f"{figure_id}.png"
@@ -150,7 +192,10 @@ def main() -> int:
         legend_target = output / f"{figure_id}_legend.txt"
         copy_new(png_source, png_target)
         copy_new(pdf_source, pdf_target)
-        write_text_new(legend_target, plain_legend(legend_source))
+        if figure_id == "Figure3":
+            write_text_new(legend_target, FIGURE3_LEGEND)
+        else:
+            write_text_new(legend_target, plain_legend(legend_source))
         with Image.open(png_target) as image:
             width, height = image.size
             dpi = image.info.get("dpi", (600, 600))
@@ -180,7 +225,7 @@ Each figure has exactly three submission-facing files:
 
 Selected versions:
 - Figure 2 v06
-- Figure 3 v05
+- Figure 3 v06 (set relationship clarified in Panel C)
 - Figure 4 v04
 - Figure S1 v06
 

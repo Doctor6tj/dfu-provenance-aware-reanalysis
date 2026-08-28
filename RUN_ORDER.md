@@ -54,7 +54,7 @@ Rscript --vanilla 04_code/R/m03_run_gse80178_core_v3.R \
   outputs/M03_primary_all12
 ```
 
-Prespecified n=11 sensitivity profile:
+Targeted n=11 quality-control sensitivity profile (GSM2114233 omitted; the all-12 analysis remains primary):
 
 ```bash
 Rscript --vanilla 04_code/R/m03_run_gse80178_core_v3.R \
@@ -138,6 +138,36 @@ python 04_code/Python/export_figure1.py \
   --output-dir outputs/Figure1_final \
   --inkscape /path/to/inkscape \
   --author-visual-lock APPROVED
+```
+
+Apply the G15 interpretation corrections after the base figure export. These steps do not rerun expression analyses:
+
+```bash
+python 04_code/Python/g15_revise_figure1_scientific_boundaries_v1.py \
+  --project-root . \
+  --output-dir outputs/Figure1_G15 \
+  --inkscape /path/to/inkscape \
+  --stage final
+
+python 04_code/Python/g15_revise_figure4_estimability_v1.py \
+  --project-root . \
+  --output-dir outputs/Figure4_G15 \
+  --stage final
+```
+
+Apply the G15 interpretation corrections after the base figure export. These steps do not rerun expression analyses:
+
+```bash
+python 04_code/Python/g15_revise_figure1_scientific_boundaries_v1.py \
+  --project-root . \
+  --output-dir outputs/Figure1_G15 \
+  --inkscape /path/to/inkscape \
+  --stage final
+
+python 04_code/Python/g15_revise_figure4_estimability_v1.py \
+  --project-root . \
+  --output-dir outputs/Figure4_G15 \
+  --stage final
 ```
 
 Supplementary tables can be rebuilt without raw-expression analysis:

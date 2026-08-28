@@ -1,0 +1,7 @@
+﻿module,operation,seed,source
+M01-M05,Deterministic preprocessing and tabular synthesis,NOT_APPLICABLE,RUN_ORDER.md
+M07,Per-library doublet detection base,20260825,04_code/parameter_manifests/M07_SINGLE_CELL_CONTEXT_full_core_parameters_v1.json
+M07,PCA,20260826,04_code/parameter_manifests/M07_SINGLE_CELL_CONTEXT_full_core_parameters_v1.json
+M07,Clustering,20260827,04_code/parameter_manifests/M07_SINGLE_CELL_CONTEXT_full_core_parameters_v1.json
+M07,UMAP,20260828,04_code/parameter_manifests/M07_SINGLE_CELL_CONTEXT_full_core_parameters_v1.json
+Figure S1,Label placement and UMAP display,20260826,04_code/R/build_figureS1.R

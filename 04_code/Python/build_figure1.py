@@ -186,8 +186,8 @@ def build_layout() -> dict:
     layout = {
         "schema_version": "1.2",
         "figure_id": "Figure1_Study_Design",
-        "candidate_version": "v02",
-        "status": "Visual candidate; not submission locked",
+        "candidate_version": "G15_v05",
+        "status": "Author-approved submission wording revision",
         "canvas": {"width_px": 1900, "height_px": 1860, "background": "#FFFFFF"},
         "publication": {"target_width_mm": 180, "stress_test_width_mm": 170, "final_dpi": 600},
         "styles": {
@@ -225,11 +225,11 @@ def build_layout() -> dict:
         290,
         "Six public human DFU transcriptomic series",
         [
-            "127 accession records mapped to 94 analytic participant units",
+            "127 accession records mapped to 94 conservative analytic units",
             "Core bulk: GSE80178 | exact-reuse audit: GSE68183",
             "Supporting single-cell context: GSE165816",
             "Non-core context: GSE134431 (healing), GSE143735 (forearm),",
-            "GSE199939 (foot-skin background)",
+            "GSE199939 (specimen-level ulcer status unresolved)",
         ],
         "#8793A0",
         "#F7F8F8",
@@ -285,12 +285,12 @@ def build_layout() -> dict:
                 440,
                 540,
                 230,
-                "Participant-level units",
+                "Inferential units",
                 [
-                    "Participants were the clinical",
-                    "inferential units",
-                    "Cells, libraries, and reused",
-                    "objects were not independent n",
+                    "Source-reported specimen or",
+                    "participant units carried inference",
+                    "Cells, libraries, and reused objects",
+                    "did not add independent evidence",
                 ],
                 blue,
                 blue_fill,
@@ -370,13 +370,14 @@ def build_layout() -> dict:
         "N_BOUNDARY",
         "qualifier_card",
         310,
-        1630,
+        1600,
         1280,
-        170,
+        200,
         "Interpretation boundary",
         [
-            "No cross-study gene or pathway robustness claim was estimable",
-            "Global null evidence does not establish biological absence or replication",
+            "Cross-study gene and pathway robustness were not estimable",
+            "No single-cell association passed global correction",
+            "Non-significance does not establish biological absence",
         ],
         boundary,
         boundary_fill,
@@ -401,7 +402,7 @@ def build_layout() -> dict:
         {"id": "E_BULK_CONVERGE", "edge_type": "evidence_convergence", "points": [[520, 1160], [520, 1220], [950, 1220]], "stroke": blue, "stroke_width": 2.0, "arrow": False},
         {"id": "E_SC_CONVERGE", "edge_type": "evidence_convergence", "points": [[1380, 1160], [1380, 1220], [950, 1220]], "stroke": green, "stroke_width": 2.0, "arrow": False},
         {"id": "E_TO_SYNTHESIS", "edge_type": "evidence_convergence", "points": [[950, 1220], [950, 1290]], "stroke": connector, "stroke_width": 2.4, "arrow": True, "to": "N_SYNTHESIS"},
-        {"id": "E_TO_BOUNDARY", "edge_type": "qualifier_boundary", "points": [[950, 1480], [950, 1630]], "stroke": boundary, "stroke_width": 1.8, "dash": [8, 8], "arrow": False, "to": "N_BOUNDARY"},
+        {"id": "E_TO_BOUNDARY", "edge_type": "qualifier_boundary", "points": [[950, 1480], [950, 1600]], "stroke": boundary, "stroke_width": 1.8, "dash": [8, 8], "arrow": False, "to": "N_BOUNDARY"},
     ]
     return layout
 
@@ -443,16 +444,16 @@ def main() -> int:
 - Registered series: all six are named, but only GSE80178 is core bulk evidence and GSE165816 is supporting single-cell context.
 - Provenance alias: GSE68183 is an exact-reuse audit source, not an independent cohort.
 - Non-core context: GSE134431, GSE143735, and GSE199939 remain visibly outside the quantitative core.
-- Inferential unit: participant-level throughout; cells, libraries, and reused objects are not independent sample size.
+- Inferential unit: source-reported specimen or participant units carry inference; cells, libraries, and reused objects do not add independent evidence.
 - Visual profile: SQ5 minimal journal workflow; blue for core bulk, green for supporting single-cell, neutral synthesis/boundary.
 - Claim boundary: no cross-study gene/pathway robustness claim is estimable; global null evidence is not biological absence.
 - Target width: 180 mm; stress test: 170 mm.
-- Review status: PNG visual candidate only; submission exports are deferred until visual lock.
+- Review status: author-approved G15_v05 submission wording revision.
 """,
     )
     write_new(
         out / "Figure1_legend_v02.md",
-        """**Figure 1. Provenance-aware study design and evidence hierarchy.** Six public human diabetic-foot transcriptomic series were mapped from 127 accession records to 94 analytic participant units. Source-object identity, tissue and comparator roles, and participant-level inference were resolved before modeling. GSE80178 supplied the core within-study bulk contrasts, whereas GSE165816 supplied supporting participant-level single-cell context. GSE68183 was retained as an exact-reuse audit source, and GSE134431, GSE143735, and GSE199939 remained outside the quantitative core. Only one independent compatible core bulk study remained; therefore, cross-study gene and pathway robustness claims were not estimable. The globally null single-cell analysis was supporting context rather than independent replication and does not establish biological absence.
+        """**Figure 1. Provenance-aware study design and evidence hierarchy.** Six public human diabetic-foot transcriptomic series were mapped from 127 accession records to 94 conservative analytic units. Source-object identity, comparator compatibility, and source-reported specimen/participant inferential units were specified before modeling. GSE80178 supplied the core within-study bulk contrasts, whereas GSE165816 supplied supporting participant-level single-cell context. GSE68183 was retained as an exact-reuse source; GSE134431, GSE143735, and GSE199939 remained outside the quantitative core. Specimen-level ulcer status was unresolved for GSE199939. Only one independent compatible core bulk study remained, so cross-study gene and pathway robustness were not estimable. No single-cell association passed global correction; this does not establish biological absence.
 """,
     )
 

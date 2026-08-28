@@ -1,0 +1,894 @@
+{
+  "schema_version": "1.2",
+  "figure_id": "Figure1_Study_Design",
+  "candidate_version": "G15_v03",
+  "status": "Presubmission scientific-boundary revision",
+  "canvas": {
+    "width_px": 1900,
+    "height_px": 1860,
+    "background": "#FFFFFF"
+  },
+  "publication": {
+    "target_width_mm": 180,
+    "stress_test_width_mm": 170,
+    "final_dpi": 600
+  },
+  "styles": {
+    "profile": "minimal_journal_workflow",
+    "font_family": "Arial, Helvetica, sans-serif",
+    "node_defaults": {
+      "stroke_width": 2.4,
+      "top_accent_line": false,
+      "header_mode": "plain"
+    },
+    "section_header": {
+      "underline": false,
+      "decorative_rule": false
+    },
+    "main_line": {
+      "width": 2.4
+    },
+    "arrowhead": {
+      "length_px": 10,
+      "width_px": 8
+    },
+    "text_alignment": {
+      "left_padding_mm_target_low": 3.2,
+      "shared_anchor_tolerance_mm": 0.5
+    },
+    "spacing_mm": {
+      "major_stage_gap_min": 7.0
+    },
+    "palette": {
+      "text": "#27323C",
+      "connector": "#5F6B76",
+      "blue": "#4B7EAF",
+      "blue_fill": "#EDF4FB",
+      "green": "#5A9B55",
+      "green_fill": "#F1F7F0",
+      "synthesis": "#6E7F73",
+      "synthesis_fill": "#F4F7F4",
+      "boundary": "#7D858D",
+      "boundary_fill": "#FAFAF9"
+    }
+  },
+  "nodes": [
+    {
+      "id": "N_INPUT",
+      "node_class": "information_card",
+      "x": 80,
+      "y": 60,
+      "w": 1740,
+      "h": 290,
+      "radius": 18,
+      "fill": "#F7F8F8",
+      "stroke": "#8793A0",
+      "stroke_width": 2.4,
+      "stage_id": "01_input",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_INPUT_title",
+          "lines": [
+            "Six public human DFU transcriptomic series"
+          ],
+          "x": 114,
+          "y": 118,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_INPUT_body",
+          "lines": [
+            "127 accession records mapped to 94 conservative analytic units",
+            "Core bulk: GSE80178 | exact-reuse audit: GSE68183",
+            "Supporting single-cell context: GSE165816",
+            "Non-core context: GSE134431 (healing), GSE143735 (forearm),",
+            "GSE199939 (specimen-level ulcer status unresolved)"
+          ],
+          "x": 114,
+          "y": 168,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ]
+    },
+    {
+      "id": "N_IDENTITY",
+      "node_class": "information_card",
+      "x": 80,
+      "y": 440,
+      "w": 540,
+      "h": 230,
+      "radius": 18,
+      "fill": "#EDF4FB",
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.4,
+      "stage_id": "02_integrity",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_IDENTITY_title",
+          "lines": [
+            "Source-object identity"
+          ],
+          "x": 114,
+          "y": 498,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_IDENTITY_body",
+          "lines": [
+            "Six GSE68183 controls exactly",
+            "matched GSE80178 raw objects",
+            "Duplicate labels remained",
+            "provenance, not added evidence"
+          ],
+          "x": 114,
+          "y": 548,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ],
+      "sibling_group": "integrity"
+    },
+    {
+      "id": "N_COMPARATOR",
+      "node_class": "information_card",
+      "x": 680,
+      "y": 440,
+      "w": 540,
+      "h": 230,
+      "radius": 18,
+      "fill": "#EDF4FB",
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.4,
+      "stage_id": "02_integrity",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_COMPARATOR_title",
+          "lines": [
+            "Comparator roles"
+          ],
+          "x": 714,
+          "y": 498,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_COMPARATOR_body",
+          "lines": [
+            "DFU, diabetic intact foot, and",
+            "nondiabetic intact foot skin",
+            "remained distinct strata",
+            "Other contexts stayed outside"
+          ],
+          "x": 714,
+          "y": 548,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ],
+      "sibling_group": "integrity"
+    },
+    {
+      "id": "N_UNIT",
+      "node_class": "information_card",
+      "x": 1280,
+      "y": 440,
+      "w": 540,
+      "h": 230,
+      "radius": 18,
+      "fill": "#EDF4FB",
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.4,
+      "stage_id": "02_integrity",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_UNIT_title",
+          "lines": [
+            "Participant-level units"
+          ],
+          "x": 1314,
+          "y": 498,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_UNIT_body",
+          "lines": [
+            "Participants were the clinical",
+            "inferential units",
+            "Cells, libraries, and reused",
+            "objects were not independent n"
+          ],
+          "x": 1314,
+          "y": 548,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ],
+      "sibling_group": "integrity"
+    },
+    {
+      "id": "N_BULK",
+      "node_class": "information_card",
+      "x": 140,
+      "y": 810,
+      "w": 760,
+      "h": 350,
+      "radius": 18,
+      "fill": "#EDF4FB",
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.4,
+      "stage_id": "03_streams",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_BULK_title",
+          "lines": [
+            "Core bulk inference"
+          ],
+          "x": 174,
+          "y": 868,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_BULK_body",
+          "lines": [
+            "GSE80178: 12 arrays",
+            "6 DFU, 3 diabetic intact foot,",
+            "3 nondiabetic intact foot",
+            "RMA plus limma; prespecified contrasts",
+            "Robustness required at least 2",
+            "independent compatible studies"
+          ],
+          "x": 174,
+          "y": 918,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ],
+      "sibling_group": "streams"
+    },
+    {
+      "id": "N_SC",
+      "node_class": "information_card",
+      "x": 1000,
+      "y": 810,
+      "w": 760,
+      "h": 350,
+      "radius": 18,
+      "fill": "#F1F7F0",
+      "stroke": "#5A9B55",
+      "stroke_width": 2.4,
+      "stage_id": "03_streams",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_SC_title",
+          "lines": [
+            "Supporting single-cell context"
+          ],
+          "x": 1034,
+          "y": 868,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_SC_body",
+          "lines": [
+            "GSE165816: foot skin only",
+            "14 libraries from 11 participants",
+            "7 healers and 4 nonhealers",
+            "Outcome-blinded cell annotation",
+            "Participant-cell-type pseudobulk",
+            "One global BH correction"
+          ],
+          "x": 1034,
+          "y": 918,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28,
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ],
+      "sibling_group": "streams"
+    },
+    {
+      "id": "N_SYNTHESIS",
+      "node_class": "integration_card",
+      "x": 260,
+      "y": 1290,
+      "w": 1380,
+      "h": 190,
+      "radius": 18,
+      "fill": "#F4F7F4",
+      "stroke": "#6E7F73",
+      "stroke_width": 2.4,
+      "stage_id": "04_synthesis",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_SYNTHESIS_title",
+          "lines": [
+            "Provenance-aware evidence assessment"
+          ],
+          "x": 294,
+          "y": 1348,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_SYNTHESIS_body",
+          "lines": [
+            "One independent compatible core bulk study remained",
+            "Single-cell outcome testing supplied participant-level context",
+            "Cross-study robustness and supporting evidence remained distinct"
+          ],
+          "x": 294,
+          "y": 1398,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ]
+    },
+    {
+      "id": "N_BOUNDARY",
+      "node_class": "qualifier_card",
+      "x": 310,
+      "y": 1600,
+      "w": 1280,
+      "h": 200,
+      "radius": 18,
+      "fill": "#FAFAF9",
+      "stroke": "#7D858D",
+      "stroke_width": 1.8,
+      "stage_id": "05_boundary",
+      "text_alignment": "left",
+      "text_left_padding_px": 34,
+      "text_blocks": [
+        {
+          "id": "N_BOUNDARY_title",
+          "lines": [
+            "Interpretation boundary"
+          ],
+          "x": 344,
+          "y": 1658,
+          "font_size": 32,
+          "font_sizes": [
+            32
+          ],
+          "font_weight": 700,
+          "font_weights": [
+            700
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [],
+          "text_anchor": "start"
+        },
+        {
+          "id": "N_BOUNDARY_body",
+          "lines": [
+            "No cross-study gene or pathway robustness claim was estimable",
+            "No single-cell association passed global correction",
+            "Non-significance does not establish biological absence"
+          ],
+          "x": 344,
+          "y": 1708,
+          "font_size": 28,
+          "font_sizes": [
+            28,
+            28,
+            28
+          ],
+          "font_weight": 400,
+          "font_weights": [
+            400,
+            400,
+            400
+          ],
+          "line_gap": 1.18,
+          "line_gaps": [
+            8,
+            8
+          ],
+          "text_anchor": "start"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "E_INPUT_STEM",
+      "edge_type": "main_flow",
+      "points": [
+        [
+          950,
+          350
+        ],
+        [
+          950,
+          395
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": false
+    },
+    {
+      "id": "E_INPUT_DIST",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          350,
+          395
+        ],
+        [
+          1550,
+          395
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": false
+    },
+    {
+      "id": "E_TO_IDENTITY",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          350,
+          395
+        ],
+        [
+          350,
+          440
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_IDENTITY"
+    },
+    {
+      "id": "E_TO_COMPARATOR",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          950,
+          395
+        ],
+        [
+          950,
+          440
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_COMPARATOR"
+    },
+    {
+      "id": "E_TO_UNIT",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          1550,
+          395
+        ],
+        [
+          1550,
+          440
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_UNIT"
+    },
+    {
+      "id": "E_IDENTITY_DOWN",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          350,
+          670
+        ],
+        [
+          350,
+          730
+        ]
+      ],
+      "stroke": "#7A8590",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_COMPARATOR_DOWN",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          950,
+          670
+        ],
+        [
+          950,
+          730
+        ]
+      ],
+      "stroke": "#7A8590",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_UNIT_DOWN",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          1550,
+          670
+        ],
+        [
+          1550,
+          730
+        ]
+      ],
+      "stroke": "#7A8590",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_INTEGRITY_DIST",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          350,
+          730
+        ],
+        [
+          1550,
+          730
+        ]
+      ],
+      "stroke": "#7A8590",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_TO_BULK",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          520,
+          730
+        ],
+        [
+          520,
+          810
+        ]
+      ],
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_BULK"
+    },
+    {
+      "id": "E_TO_SC",
+      "edge_type": "parallel_evidence_branch",
+      "points": [
+        [
+          1380,
+          730
+        ],
+        [
+          1380,
+          810
+        ]
+      ],
+      "stroke": "#5A9B55",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_SC"
+    },
+    {
+      "id": "E_BULK_CONVERGE",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          520,
+          1160
+        ],
+        [
+          520,
+          1220
+        ],
+        [
+          950,
+          1220
+        ]
+      ],
+      "stroke": "#4B7EAF",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_SC_CONVERGE",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          1380,
+          1160
+        ],
+        [
+          1380,
+          1220
+        ],
+        [
+          950,
+          1220
+        ]
+      ],
+      "stroke": "#5A9B55",
+      "stroke_width": 2.0,
+      "arrow": false
+    },
+    {
+      "id": "E_TO_SYNTHESIS",
+      "edge_type": "evidence_convergence",
+      "points": [
+        [
+          950,
+          1220
+        ],
+        [
+          950,
+          1290
+        ]
+      ],
+      "stroke": "#5F6B76",
+      "stroke_width": 2.4,
+      "arrow": true,
+      "to": "N_SYNTHESIS"
+    },
+    {
+      "id": "E_TO_BOUNDARY",
+      "edge_type": "qualifier_boundary",
+      "points": [
+        [
+          950,
+          1480
+        ],
+        [
+          950,
+          1600
+        ]
+      ],
+      "stroke": "#7D858D",
+      "stroke_width": 1.8,
+      "dash": [
+        8,
+        8
+      ],
+      "arrow": false,
+      "to": "N_BOUNDARY"
+    }
+  ]
+}

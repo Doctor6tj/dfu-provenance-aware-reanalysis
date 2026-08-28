@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "parameters": {
+    "provenance_identity": "SHA-256 over complete gzip-decompressed CEL byte stream plus decompressed byte length",
+    "bulk_arrays": 12,
+    "bulk_genes": 18865,
+    "bulk_primary_contrasts": [
+      "DFU_vs_DFS",
+      "DFU_vs_NFS"
+    ],
+    "bulk_sensitivity": "DFU_vs_0.5(DFS+NFS); targeted n=11 profile omitting GSM2114233",
+    "bulk_multiple_testing": "BH within each declared contrast; FDR < 0.05",
+    "cross_study_minimum": 2,
+    "cross_study_estimability": "NOT_ESTIMABLE; one independent compatible study",
+    "single_cell_min_features": 200,
+    "single_cell_max_mito_percent": 50,
+    "single_cell_within_library_nmad": 3,
+    "pseudobulk_min_cells": 20,
+    "pseudobulk_min_counts": 1000,
+    "cell_type_min_participants_per_group": 3,
+    "global_single_cell_tests": 65624
+  },
+  "parameter_files": [
+    "04_code/parameter_manifests/M02_cohort_harmonization_parameters_v1.json",
+    "04_code/parameter_manifests/M03_WITHIN_STUDY_EFFECTS_primary_parameters_v2.json",
+    "04_code/parameter_manifests/M03_WITHIN_STUDY_EFFECTS_sensitivity_exclude_GSM2114233_parameters_v2.json",
+    "04_code/parameter_manifests/M04_NAIVE_VS_AWARE_SENSITIVITY_parameters_v1.json",
+    "04_code/parameter_manifests/M05_ROBUSTNESS_SYNTHESIS_parameters_v1.json",
+    "04_code/parameter_manifests/M07_SINGLE_CELL_CONTEXT_full_core_parameters_v1.json"
+  ],
+  "unknown_historical_defaults": []
+}

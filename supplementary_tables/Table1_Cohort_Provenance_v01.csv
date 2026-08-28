@@ -3,6 +3,6 @@ GSE68183,GPL16686 microarray,Foot-skin controls only,6,0 new; 6 aliases of GSE80
 GSE80178,GPL16686 microarray,DFU ulcer; diabetic and nondiabetic intact foot skin,12,12,Core primary bulk analysis,Pooled DFS/NFS is sensitivity only
 GSE134431,Bulk expression,DFU tissue plus nonulcerated diabetic foot-skin context,21,21,Deferred healing-outcome context,M06 uncontracted and not MVM; does not block submission
 GSE143735,Bulk expression,Nonulcerated forearm skin,13,13,Systemic intact-skin context,Never local DFU validation and never pooled with foot or ulcer tissue
-GSE199939,Bulk expression,Foot skin; ulcer status unverified,21,21,Diabetic-foot-skin background only,Author-approved exclusion from core DFU analysis
+GSE199939,Bulk expression,Foot skin; ulcer status unverified,21,21,Diabetic-foot-skin background only,Excluded from quantitative core; specimen-level ulcer status unresolved
 GSE165816,Single-cell RNA-seq,Foot skin only for M07; forearm and PBMC excluded,54,27 series-wide; 11 in foot-skin analysis,Supporting participant-level single-cell context,M07 core uses 14 foot-skin libraries from 11 participants; cells/libraries are not inferential units
 Total registered,Mixed public transcriptomic resources,Study-specific,127,94 registered,Participant-aware evidence interface,No cross-platform pooled expression analysis
